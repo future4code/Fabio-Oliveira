@@ -1,0 +1,99 @@
+.cabecalho{
+    background-color: #B51212;
+    padding-top: 40px;
+    margin: -18px -8px -20px;
+    text-align: center;
+    font: Arial;
+}
+
+.links{
+    background-color: #B51212;
+    margin: -8px -8px -20px;
+    text-align: right;
+    color: #E9DDDB;
+    
+}
+
+.text-deco{
+    text-decoration: none;
+    color: #E9DDDB;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+#links2{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.img-folha{
+    max-width: 650px;
+    max-height: 650px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 90px auto;
+
+}
+
+#img{
+    max-width: 25x;
+    max-height: 25px;
+    width: auto;
+    height: auto;
+   
+}
+
+#rodape{
+    position: fixed;
+    bottom: 0;   
+
+}
+
+ul{
+    list-style-type: none;
+}
+
+.foto {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.nomes{
+    text-align: center;
+    font-style: italic;
+}
+
+.funcionarios{
+    text-align: center;
+    margin-top: 40px;
+    
+}
+
+.armas{
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+
+}
+
+tr{
+    margin: 40px;
+
+}
+
+button{
+    color: red;
+    background-color:black;
+}
+
+button:active{
+   background-color: white;
+
+
+}
