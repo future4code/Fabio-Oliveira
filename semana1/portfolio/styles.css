@@ -1,0 +1,185 @@
+header{
+    top: 0;
+    background-color:#581845;
+    text-align:right;
+    padding: 10px;
+    margin-top: -28px;
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+div{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    text-decoration: none;
+    font-style: oblique;
+}
+
+.links{
+    text-decoration: none;
+    margin: 10px;
+
+   }
+
+   h1{
+       text-align:center;
+
+   }
+
+   h2{
+       text-align: center;
+       margin-top: 10px;
+   }
+
+   .banquinha{
+       max-width: 600px;
+       max-height: 600px;
+       height: auto;
+       width:auto;
+       position: relative;
+       bottom: 50px;
+       left: 280px;
+
+   }
+
+   
+
+   footer{
+       bottom: 0;
+       position:fixed;
+       background-color:#581845;
+       padding-right: 1250px;
+       margin-left: -10px;
+       padding-top: 20px;
+    
+    }
+
+    span{
+        text-align: center;
+        position: relative;
+        left: 1200px;
+        font-size: 10px;
+        font-family: cursive;
+        bottom: 10px;
+
+    }
+
+
+    .apresentação{
+        text-align: center;
+        margin: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+        font-style: italic;
+        position: relative;
+        top: 70px;
+
+    }
+
+
+    .projetos{
+        text-align: center;
+        display: inline;
+        position:absolute;
+        top:350px;
+        left: 10px;
+        border-style: solid;
+        padding: 2px;
+        
+        
+    }
+
+    li {
+        list-style-type: none;
+      }
+
+    #projetos-titulo{
+        font-weight: bold;
+    }
+
+    a:link{
+        color: black;
+    }
+
+    a:visited{
+         color: black;
+    }
+
+    a:hover{
+        color: chartreuse;
+    }
+
+
+    .habilidades{
+        text-align: center;
+        display: inline;
+        position: absolute;
+        left: 290px;
+        top: 350px;
+        border-style: solid;
+        
+
+    }
+
+       .ensino{
+        text-align: center;
+        display: inline;
+        position: absolute;
+        right: 10px;
+        top: 350px;
+        border-style: solid;
+
+
+    }
+
+    .header-projetos{
+        position: relative;
+        bottom: 60px;
+    }
+
+    .sub-projetos{
+        position: relative;
+        bottom: 60px;
+    }
+
+    .projetos-descrição{
+        text-align: center;
+        display: inline;
+        position: absolute;
+        left: 230px;
+        top: 500px;
+        border-style: solid;
+    }
+
+    .header-table{
+        text-align: center;
+    }
+
+    form{
+        margin: 0 auto;
+        width: 400px;
+        padding: 1em;
+        border: 1px solid;
+        border-radius: 1em;
+    }
+
+    label{
+        display: inline-block;
+        text-align: right;
+        width: 90px;
+    }
+
+    button{
+            margin-left: .5em;
+    }
+
+        button:hover{
+        background-color: white;
+    }
+
+    .logos{
+        max-width: 50px;
+        max-height: 50px;
+        width: auto;
+        height: auto;
+    }
