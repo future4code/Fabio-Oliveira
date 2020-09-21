@@ -53,6 +53,14 @@ div img {
     background-color: #c44f00;
 }
 
+button:hover{
+    background-color: aqua;
+}
+
+button:active{
+    background-color: blueviolet;
+}
+
 .container {
     height: 500px;
     text-align: center;
