@@ -34,7 +34,7 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    background: none;
 }
 
 .botao-amarelo {
@@ -113,9 +113,7 @@ table {
     text-align: center;
 }
 
-td{
-    text-decoration-style: solid;
-}
+
 
 td button {
     background-color: #fadf63;
