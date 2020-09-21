@@ -29,6 +29,7 @@ button:focus {
 
 img {
     width: 100px;
+    height: 100px;
 }
 
 div>p:first-child {
@@ -49,6 +50,8 @@ div img {
     position:relative;
     top: 120px;
     right: 220px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .botao-amarelo:hover {
@@ -70,6 +73,8 @@ button:active{
 
 .icone {
     height: 15px;
+    width: 15px;
+    
 }
 
 
@@ -83,6 +88,8 @@ button:active{
     background-color: #2274a5;
     color: white;
     padding-top: 120px;
+    margin-right: auto;
+    margin-left: auto;
     
 }
 
@@ -123,9 +130,9 @@ table {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-
 
 td button {
     background-color: #fadf63;
@@ -149,6 +156,10 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    text-align: center;
+    margin: auto;
+    display: flex;
+
 }
 
 #back-button:hover {
