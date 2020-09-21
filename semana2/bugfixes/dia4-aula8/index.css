@@ -100,6 +100,7 @@ button:active{
     padding-top: 120px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: -200px;
     
 }
 
@@ -171,6 +172,7 @@ td button {
     margin: auto;
     display: flex;
     outline: none;
+    padding-left: 30px;
 
 }
 
