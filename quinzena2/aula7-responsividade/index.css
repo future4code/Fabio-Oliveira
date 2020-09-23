@@ -180,7 +180,7 @@ div {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(12, 1fr);
         row-gap: 1em;
-        column-gap: 1em;
+        column-gap: initial;
     }
 
     .green-block1{
@@ -242,7 +242,6 @@ div {
   .div-black{
       display: grid;
       height: 1em;
-      width: 91vw;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr;
       row-gap: 1em;
