@@ -25,6 +25,7 @@ body {
     display: flex;
     flex-basis: 20%;
     height: 25px;
+    justify-content: center;
 
 }
 
@@ -34,13 +35,17 @@ body {
     text-align: center;
     flex-basis: 80%;
     height: 25px;
+    justify-content: center;
     
 }
 
 .pink-background {
     background-color: fuchsia;
-    padding: 15%;
-    padding-right: 400px;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center;
+
 }
 
 #middle-container{
@@ -48,34 +53,36 @@ body {
     justify-content: space-between;
 }
 
+#content2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .blue-background {
     background-color: blue;
-    display: flex;
-    padding-right: 500px;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    height: 100%;
+    width: 50vw;
+
 }
 
 .red-background {
     background-color: red;
-    display: flex;
     height: 100px;
     width: 500px;
-    /* padding-left: 500px;
-    padding-top: 50px;
-    padding-bottom: 50px; */
 }
 
 .lightgreen-background {
     background-color: lightgreen;
-    display: flex;
     height: 100px;
     width: 500px;
     text-align: center;
-    /* padding: 45px; */
 }
 
 .purple-background {
     background-color: purple;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+    justify-content: center;
 }
