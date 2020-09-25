@@ -1,0 +1,70 @@
+/* Style Geral */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace
+}
+
+header{
+    background-color:#B7D9E6 ;
+
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 5vh;
+    text-align: center;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+}
+
+li{
+    margin: 2em;
+}
+
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+h2{
+    grid-column-start: 2;
+}
+
+
+#logo{
+    height: 5vh;
+    width: 5vh;
+    position: fixed;
+    left: 0;
+
+}
+
+.shoes{
+    grid-column-start: 3;
+    grid-row-start: 3;
+    height: 10vh;
+    width: 10vw;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #B7D9E6;
+    width: 100%;
+}
+
+.redes{
+    height: 3vh;
+    width: 3vh;
+    margin-right: 1vw;
+}
