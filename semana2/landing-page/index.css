@@ -3,11 +3,17 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Courier New', Courier, monospace
+    font-family: 'Courier New', Courier, monospace;
+    
 }
 
+body{
+    background-color: #DAE5E8
+}
+
+
 header{
-    background-color:#B7D9E6 ;
+    background-color:#31303A ;
     position: fixed;
     top: 0;
     width: 100%;
@@ -41,12 +47,15 @@ section{
     align-items: center;
     margin-left: 10vh;
     margin-top: 15vw;
+    background-color: #DAE5E8
 }
 
 h2{
     grid-column-start: 1;
     grid-row-start: 1;
     text-align: center;
+    margin-right: 5vw;
+    margin-bottom: 1vw;
     
 }
 
@@ -67,6 +76,8 @@ h3{
 .shoes{
     height: 10vh;
     width: 10vw;
+    border: 10px black;
+    border-style: groove; 
 }
 
 footer{
@@ -74,7 +85,7 @@ footer{
     bottom: 0;
     display: flex;
     justify-content: flex-end;
-    background-color: #B7D9E6;
+    background-color: #31303A;
     width: 100%;
 }
 
@@ -100,4 +111,51 @@ footer{
     li{
         margin: 1em;
     }
+
+    section{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 2vw;
+        row-gap: 3vw;
+        align-content: center;
+        align-items: center;
+    }
+
+    p{
+        font-size: 10px;
+    }
+
+    footer{
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: flex-end;
+        background-color: #31303A;
+        width: 100%;
+    }
+
+    .shoes{
+        height: 10vh;
+        width: 10vh;
+        margin-right: 5vh;
+        margin-left: 1vh;
+    }
+
+    #modelos{
+        grid-row-start: 1;
+        margin-right: 5vh;
+        margin-top: 10vh;
+    }
+
+    #quem-somos{
+        grid-row-start: 2;
+        margin-right: 5vh;
+        margin-top: -40vh;
+    }
+
+    h2{
+        margin-right: 10vw;
+    }
+
 }
