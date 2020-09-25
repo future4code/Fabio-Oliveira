@@ -8,6 +8,9 @@
 
 header{
     background-color:#B7D9E6 ;
+    position: fixed;
+    top: 0;
+    width: 100%;
 
 }
 
@@ -15,7 +18,7 @@ nav{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 5vh;
+    height: 9vh;
     text-align: center;
 }
 
@@ -28,28 +31,40 @@ li{
     margin: 2em;
 }
 
-article{
+section{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    column-gap: 2vw;
+    row-gap: 3vw;
+    align-content: center;
+    align-items: center;
+    margin-left: 10vh;
+    margin-top: 15vw;
 }
 
 h2{
-    grid-column-start: 2;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    text-align: center;
+    
+}
+
+h3{
+    margin-right: 5vw;
+    font-style: italic;
 }
 
 
 #logo{
-    height: 5vh;
-    width: 5vh;
+    height: 9vh;
+    width: 9vh;
     position: fixed;
     left: 0;
 
 }
 
 .shoes{
-    grid-column-start: 3;
-    grid-row-start: 3;
     height: 10vh;
     width: 10vw;
 }
@@ -67,4 +82,22 @@ footer{
     height: 3vh;
     width: 3vh;
     margin-right: 1vw;
+}
+
+/* Style iPhone */
+
+@media screen and (min-device-width: 375px) and (max-device-width: 420px){
+
+    #logo{
+        height: 9vh;
+        width: 9vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+    
+    }
+
+    li{
+        margin: 1em;
+    }
 }
