@@ -11,32 +11,32 @@
  * 
  */
 
-console.log("Bem vindo ao jogo de BlackJack!")
+// console.log("Bem vindo ao jogo de BlackJack!")
 
 
-if(confirm("Quer iniciar uma rodada?")){
-   const cartaUsuario = comprarCarta();
-   const cartaUsuario2 = comprarCarta();
-   const somaUsuario = cartaUsuario.valor + cartaUsuario2.valor;
-   console.log(`Usuário - cartas: ${cartaUsuario.texto} ${cartaUsuario2.texto} - pontuação ${somaUsuario}`)
+// if(confirm("Quer iniciar uma rodada?")){
+//    const cartaUsuario = comprarCarta();
+//    const cartaUsuario2 = comprarCarta();
+//    const somaUsuario = cartaUsuario.valor + cartaUsuario2.valor;
+//    console.log(`Usuário - cartas: ${cartaUsuario.texto} ${cartaUsuario2.texto} - pontuação ${somaUsuario}`)
 
-   const cartaPc = comprarCarta();
-   const cartaPc2 = comprarCarta();
-   const somaPc = (cartaPc.valor + cartaPc2.valor);
-   console.log(`Computador - cartas: ${cartaPc.texto} ${cartaPc2.texto} - pontuação ${somaPc}`)
+//    const cartaPc = comprarCarta();
+//    const cartaPc2 = comprarCarta();
+//    const somaPc = (cartaPc.valor + cartaPc2.valor);
+//    console.log(`Computador - cartas: ${cartaPc.texto} ${cartaPc2.texto} - pontuação ${somaPc}`)
 
-   if(somaUsuario === somaPc){
-      console.log("Empate.")
-   }
+//    if(somaUsuario === somaPc){
+//       console.log("Empate.")
+//    }
 
-   if(somaUsuario > somaPc){
-      console.log("O jogador venceu!")
-   }
+//    if(somaUsuario > somaPc){
+//       console.log("O jogador venceu!")
+//    }
 
-   if(somaUsuario < somaPc){
-      console.log("O computador venceu!")
-   }
+//    if(somaUsuario < somaPc){
+//       console.log("O computador venceu!")
+//    }
 
-}else {
-   console.log("O jogo acabou.")
-}
+// }else {
+//    console.log("O jogo acabou.")
+// }
