@@ -108,7 +108,68 @@
 
 
 // b)
-const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
-let tamanhoArray = (array)=>{
+// let seEPar = (numero) =>{
+
+//     if (numero % 2 === 0){
+//         return true
+//     }
+//     else{
+//         return false
+//     }
+
+// }
+
+// let resultado = seEPar(10)
+// let resultado2 = seEPar(5)
+// console.log(resultado)
+// console.log(resultado2)
+
+
    
-   }
+
+// c)
+
+// const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+
+
+// let tamanhoArray = (array) => {
+//     let arrayPar = []
+//     for (let i = 0; i < array.length ;i++) {
+//         if (array[i] %  2 === 0){
+//             arrayPar.push(array[i])
+//         }
+
+        
+//     }
+
+//     return arrayPar.length
+// }
+// let resultado = tamanhoArray(array)
+// console.log(resultado)
+
+// d)
+
+const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+function ePar (numero){
+    let resultado
+    if(Number(numero) % 2 == 0){
+        resultado = true
+    } else {
+        resultado = false
+    }
+    return resultado
+}
+function nPares (arr){
+    let cont = 0;
+    for (let i=0; i < arr.length; i++){
+        if(ePar(arr[i])){
+            cont++
+        }
+    }
+    return cont
+}
+
+let result = nPares(array)
+
+console.log(result)
+
