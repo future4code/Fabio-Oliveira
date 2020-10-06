@@ -10,8 +10,23 @@ function criarTarefa() {
         return
     }
 
-    ondeAcrescenta.innerHTML += `<li>${inputTarefa.value}</li>`
+    ondeAcrescenta.innerHTML += `<li class="limpar" onclick="riscarTarefa(this)">${inputTarefa.value}</li>`
     inputTarefa.value = ""
 }
 
+function riscarTarefa(id){
+    id.style.textDecoration = "line-through";
+}
+
+function zerarTarefa() {
+    let zerar = confirm("Deseja mesmo limpar sua lista de tarefas?")
+
+    if(zerar === true){
+        const limparTarefa = document.getElementsByClassName("limpar")
+
+        for (let i = 0; i <limparTarefa.length; i++){
+            limparTarefa[i].innerHTML = " "
+        }
+    }
+}
 
