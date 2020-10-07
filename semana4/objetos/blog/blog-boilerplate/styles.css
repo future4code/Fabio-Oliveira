@@ -44,3 +44,9 @@ button {
     margin: 10px;
     border-top: 3px double rgb(77, 77, 77);
 }
+
+img {
+height: 15em;
+width: 15em;
+
+}

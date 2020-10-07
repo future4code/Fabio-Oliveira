@@ -9,15 +9,11 @@ const clickButton = () => {
         box.innerHTML += `<h1> ${title.value} </h1>`
         box.innerHTML += `<h4> ${author.value} </h4>`
         box.innerHTML += `<p> ${content.value} </p>`
-        box.innerHTML += `<img scr="${image.value}><img>`
         
 
-        // if(image.value.includes("http")){
-        //     box.innerHTML += `<img scr="${image.value}><img>`
-    
-        //     } else{
-        //         window.alert("Manda um link, caralho!")
-        //     }
+        if(image.value.includes("http")){
+            box.innerHTML += `<img src=${image.value}><img>`
+        }
         
         
 
@@ -39,11 +35,3 @@ const clickButton = () => {
         content.value = ""
         image.value = ""
     }
-    
-    // const apertouEnter = (event) => {
-    //     if (event.key === "Enter"){
-    //         clickBotao()
-    //     }
-    // }
-
-    // const nomeDoUsuario = usuario['nome'];
