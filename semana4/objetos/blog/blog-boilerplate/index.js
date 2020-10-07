@@ -13,6 +13,9 @@ const clickButton = () => {
 
         if(image.value.includes("http")){
             box.innerHTML += `<img src=${image.value}><img>`
+
+        }else {
+            window.alert("Por favor, digite um link válido!")
         }
         
         
