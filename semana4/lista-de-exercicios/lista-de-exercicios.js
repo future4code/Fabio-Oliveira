@@ -39,28 +39,39 @@
 
 // let numeros = [1, 55, 14, 10, 12]
 
-// for (let i = 0; i < 5; i ++){
+// const exemploFor = () => {for (let i = 0; i < 5; i ++){
 //     console.log(i)
 // }
+// }
+
+// exemploFor()
+
 
 
 // Exemplo For... Of... :
 
 // let numeros = [1, 55, 14, 10, 12]
 
-// for (let numero of numeros){
+//const exemploForOf = () => for (let numero of numeros){
 //     console.log(numero)
 // }
+// }
+
+// exemploForOf()
+
+
 
 
 // Exemplo While:
 
 // let i = 10
 
-// while (i <= 20){
+//const exemploWhile = () => while (i <= 20){
 //     console.log(i++)
 // }
+// }
 
+// exemploWhile()
 
 
 // Exercício 2 -
@@ -75,3 +86,33 @@
 // c) true
 // d) true
 // e) true
+
+
+// Exercício 3 -
+
+// Você tem que escrever um código que, dado um número N, ele imprima (no console) os N primeiros números pares (por exemplo, se N for 3, você deve imprimir 0, 2 e 4; se N for 5, deve imprimir 0, 2, 4, 6 e 8).  Um colega seu disse que já começou esta tarefa, mas não conseguiu terminar. Dê uma olhada no código dele:
+
+const quantidadeDeNumerosPares = 3
+let i = 0
+while(i <= quantidadeDeNumerosPares) {
+  console.log(i*2)
+}
+
+// Este código funciona? Por quê? Caso não funcione, corrija a implementação dele. Não funciona, pois a const criada para receber os números pares não recebe nada.
+
+
+// Exercício 4 -
+
+// const triangulos = (a,b,c) => {
+//     if(a === b && b === c){
+//         console.log("Este triângulo é equilátero")
+    
+// } else if(a === b && b !== c){
+//     console.log("Este triângulo é isósceles")
+
+// } else{
+//     console.log("Este triângulo é escaleno")
+// }
+// }
+
+// triangulos(1,2,3)
