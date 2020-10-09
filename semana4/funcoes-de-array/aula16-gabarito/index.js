@@ -9,7 +9,7 @@ function imprimirDespesas(despesas){
     divDespesas.innerHTML = '<p><u>Despesas Detalhadas</u></p>'
 
     despesas.forEach((despesa) =>{ 
-        divDespesas.innerHTML+= `valor: R$${despesa.valor} | tipo: ${despesa.tipo} | descrição: ${despesa.descricao}<br>`
+        divDespesas.innerHTML += `valor: R$${despesa.valor} | tipo: ${despesa.tipo} | descrição: ${despesa.descricao}<br>`
     })
 }
 
@@ -85,7 +85,9 @@ function filtrarDespesas(){
     let valorMin = Number(document.getElementById('valorFiltroMin').value)
     let valorMax = Number(document.getElementById('valorFiltroMax').value)
 
-    if()
+    if (valorMin === ""){
+        window.alert("Digite um valor")
+    }
 
     let despesasFiltradas = arrDespesas.filter((despesas)=>{
         return (despesas.tipo === tipoFiltro || "todos" === tipoFiltro) && despesas.valor >= valorMin && despesas.valor <= valorMax
