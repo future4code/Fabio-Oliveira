@@ -219,10 +219,10 @@
 
 // Exercícios de Objetos
 
-// 1 - Arrays são estruturas que nos permitem guardar e acessar informações ao mesmo tempo. Já os objetos, são estruturas que nos permitem guardar e acessar elementos, até mesmo arrays. Com ele conseguimos criar modelos mais realista e organizada.
+// Exercício 1 - Arrays são estruturas que nos permitem guardar e acessar informações ao mesmo tempo. Já os objetos, são estruturas que nos permitem guardar e acessar elementos, até mesmo arrays. Com ele conseguimos criar modelos mais realista e organizada.
 
 
-// 2 -
+// Exercício 2 -
 
 // const criaRetangulo = (lado1, lado2) => {
 
@@ -239,7 +239,7 @@
 // criaRetangulo()
 
 
-// 3 -
+// Exercício 3 -
 
 // const filmesFavoritos = () => {
 
@@ -255,4 +255,27 @@
 
 
 //     filmesFavoritos()
+
+
+// Exercício 4-
+
+// const contatoUsuario = {
+//     nome: 'Monkey D. Luffy',
+//     idade: 19,
+//     email: 'luffy@chapeudepalha.com',
+//     endereco: 'Thousand Sunny'
+// }
+
+// const anonimizarPessoa = () => {
+//     const novoContatoUsuario = {
+//         ...contatoUsuario,
+//         nome: 'ANÔNIMO'
+//     }
+
+//     console.log(novoContatoUsuario)
+    
+// }
+
+// anonimizarPessoa()
+
 
