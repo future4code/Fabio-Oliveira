@@ -19,3 +19,9 @@
 // O segundo console.log mostra o tamanho do array formado apenas por números pares, que é 6.
 // O terceiro console.log mostra o tamanho do array formado apenas por números ímpares, que é 8.
 
+
+// Exercício 4 - 
+
+// O código contém um array que será analisado pelo loop for of. Através das variáveis numero 1 e numero 2.
+// No if(numero < numero1), o código irá analisar quais números são menores que o valor de numero1, que no caso é infinito. Considerando o primeiro elemento do array, caso ele seja menor do que o valor de numero1, ele se tornará o novo valor de numero1 e assim até o final do array. Para o segundo if(numero > numero2), a lógica de raciocínio é similar, mas no caso é para encontrar o maior número. Considerando o primeiro elemento do array, caso ele seja maior que o valor de numero2, que no caso é 0, ele se tornará o novo valor de numero2.
+// O valor de console.log(numero1) será -10 e o console.log(numero2) será 283.
