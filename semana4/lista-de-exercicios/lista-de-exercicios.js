@@ -238,3 +238,21 @@
 
 // criaRetangulo()
 
+
+// 3 -
+
+// const filmesFavoritos = () => {
+
+// const filmes = {
+//         nome: 'As Vantagens de Ser Invisível',
+//         direcao: "Stephen Chbosky",
+//         anoDeLancamento: 2012,
+//         elenco: ['Logan Lerman', 'Ezra Miller', 'Emma Watson']
+    
+// }
+// console.log(`Venha assistir ao filme ${filmes.nome}, de ${filmes.anoDeLancamento}, dirigido por ${filmes.direcao} e estrelado por ${filmes.elenco[0]}, ${filmes.elenco[1]} e ${filmes.elenco[2]}`)
+//     }
+
+
+//     filmesFavoritos()
+
