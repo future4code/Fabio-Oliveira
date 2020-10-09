@@ -336,14 +336,14 @@ const array = [1,2,3,4,5,6]
 
 // // c)
 
-    const paridade = array.map( (numero) => {
-        if(numero % 2 === 0){
-            return `${numero} é par`
-        }
-        return `${numero} é ímpar`
-    })
+    // const paridade = array.map( (numero) => {
+    //     if(numero % 2 === 0){
+    //         return `${numero} é par`
+    //     }
+    //     return `${numero} é ímpar`
+    // })
 
-    console.log(paridade)
+    // console.log(paridade)
 
 
 // Exercício 4 -
@@ -377,3 +377,36 @@ const array = [1,2,3,4,5,6]
 
 // console.log(permissaoPessoas)
 // console.log(permissaoNegadaPessoas)
+
+
+// Exercício 4 -
+
+// const consultas = [
+// 	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+// 	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+// 	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+// 	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+// ]
+
+// const criarEmails = consultas.map ( (consultar) => {
+//     let Pessoa, Lembra;
+//     if(consultar.genero === "masculino"){
+//        Pessoa  = "Senhor"; Lembra = "lembrá-lo"
+
+//     } else{
+//         Pessoa = "Senhora"; Lembra = "lembrá-la";
+//     }
+
+//     if(consultar.cancelada === false){
+//        return (`Olá, ${ Pessoa } ${consultar.nome}. Estamos enviando esta mensagem para
+//     ${ Pessoa } da sua consulta no dia ${ consultar.dataDaConsulta}. Por favor, acuse
+//     o recebimento deste e-mail.`)
+
+//     }
+//        return `Olá, ${ Pessoa} ${consultar.nome}. Infelizmente, sua consulta marcada
+//     para o dia ${ consultar.dataDaConsulta } foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la.`
+// })
+
+
+//     console.log(criarEmails)
+
