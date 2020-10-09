@@ -279,3 +279,36 @@
 // anonimizarPessoa()
 
 
+
+// Exercícios de Funções de Array
+
+// Exercício 1 -
+
+// a) 
+// const nomesPessoas = [
+// 	{ nome: "Pedro", idade: 20 },
+// 	{ nome: "João", idade: 10 },
+// 	{ nome: "Paula", idade: 12 },
+// 	{ nome: "Artur", idade: 89 } 
+// ]
+
+// const pessoasAdultas = nomesPessoas.filter( (pessoa) => {
+
+//     if(pessoa.idade >= 20){
+//         return true
+//     }
+// })
+
+// b)
+
+// const pessoasInfantis = nomesPessoas.filter( (pessoa) => {
+//     if(pessoa.idade < 20){
+//         return true
+//     }
+// })
+
+// console.log(nomesPessoas)
+// console.log(pessoasAdultas)
+// console.log(pessoasInfantis)
+
+
