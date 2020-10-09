@@ -90,15 +90,17 @@
 
 // Exercício 3 -
 
-// Você tem que escrever um código que, dado um número N, ele imprima (no console) os N primeiros números pares (por exemplo, se N for 3, você deve imprimir 0, 2 e 4; se N for 5, deve imprimir 0, 2, 4, 6 e 8).  Um colega seu disse que já começou esta tarefa, mas não conseguiu terminar. Dê uma olhada no código dele:
-
-// const quantidadeDeNumerosPares = 3
+// const quantidadeDeNumerosPares = (numero) => {
 // let i = 0
-// while(i <= quantidadeDeNumerosPares) {
-//   console.log(i++ )
+// while(i <= numero){
+//   console.log(i*2)
+//   i++
+// }
 // }
 
-// Este código funciona? Por quê? Caso não funcione, corrija a implementação dele. Não funciona, pois a const criada para receber os números pares não recebe nada.
+// quantidadeDeNumerosPares(5)
+
+// O código não funcionava pois faltava adicionar um implemento para ele.
 
 
 // Exercício 4 -
