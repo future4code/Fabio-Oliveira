@@ -92,11 +92,11 @@
 
 // Você tem que escrever um código que, dado um número N, ele imprima (no console) os N primeiros números pares (por exemplo, se N for 3, você deve imprimir 0, 2 e 4; se N for 5, deve imprimir 0, 2, 4, 6 e 8).  Um colega seu disse que já começou esta tarefa, mas não conseguiu terminar. Dê uma olhada no código dele:
 
-const quantidadeDeNumerosPares = 3
-let i = 0
-while(i <= quantidadeDeNumerosPares) {
-  console.log(i*2)
-}
+// const quantidadeDeNumerosPares = 3
+// let i = 0
+// while(i <= quantidadeDeNumerosPares) {
+//   console.log(i++ )
+// }
 
 // Este código funciona? Por quê? Caso não funcione, corrija a implementação dele. Não funciona, pois a const criada para receber os números pares não recebe nada.
 
@@ -116,3 +116,48 @@ while(i <= quantidadeDeNumerosPares) {
 // }
 
 // triangulos(1,2,3)
+
+
+// Exercício 5 -
+
+// let numero1 = Number(prompt("Digite um número"))
+// let numero2 = Number(prompt("Digite outro número"))
+
+// let numeroSolicitado = () => {
+//     if (numero1 > numero2){
+//         console.log(`O maior é: ${numero1}`)
+
+//     }else if(numero2 > numero1){
+//         console.log(`O maior é: ${numero2}`)
+
+//     } else {
+//         console.log(`Os números são iguais`) 
+
+// }
+// }
+
+// let numeroDivisivel = () =>{
+//     if (numero1 % numero2 === 0){
+//         console.log(`O ${numero1} é divisível por ${numero2}`)
+
+//     } else{
+//         console.log(`O ${numero1} não é divisível por ${numero2}`)
+//     }
+// }
+
+//     let diferencaNumeros = () => {
+//     let resultado = numero1 - numero2
+
+//     if(resultado > 0){
+//         console.log(`A diferença entre eles é: ${resultado}`)
+
+//     }else{
+//         console.log(`A diferença entre eles é: ${-resultado}`)
+//     }
+    
+//     }
+
+
+// numeroSolicitado()
+// numeroDivisivel()
+// diferencaNumeros()
