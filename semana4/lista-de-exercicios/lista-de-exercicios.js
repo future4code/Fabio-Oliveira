@@ -92,7 +92,7 @@
 
 // const quantidadeDeNumerosPares = (numero) => {
 // let i = 0
-// while(i <= numero){
+// while(i < numero){
 //   console.log(i*2)
 //   i++
 // }
@@ -100,7 +100,7 @@
 
 // quantidadeDeNumerosPares(5)
 
-// O código não funcionava pois faltava adicionar um implemento para ele.
+// O código não funcionava pois faltava adicionar um implemento para ele. Tirando o igual pude igualar o pedido no enunciado.
 
 
 // Exercício 4 -
@@ -163,3 +163,47 @@
 // numeroSolicitado()
 // numeroDivisivel()
 // diferencaNumeros()
+
+
+
+// Exercício de Funções
+
+// Exercício 1 -
+
+// const arrayNumeros = () => {
+
+
+// const numeros = [10, 40, 32, 5]
+
+
+// let numero1 = Infinity;
+// let numero2 = 0;
+
+
+
+    
+//     for(let numero of numeros ){
+//         if(numero < numero1){
+//             numero1 = numero;
+//         }
+//         numeros.splice(1,1)
+
+//         if(numero > numero2){
+//             numero2 = numero;
+//         }
+        
+//         numeros.splice(3,1)
+//     }
+
+    
+//     console.log(numero1)
+//     console.log(numero2)
+
+    
+// }
+
+// arrayNumeros()
+
+
+
+
