@@ -24,4 +24,54 @@
 
 // O código contém um array que será analisado pelo loop for of. Através das variáveis numero 1 e numero 2.
 // No if(numero < numero1), o código irá analisar quais números são menores que o valor de numero1, que no caso é infinito. Considerando o primeiro elemento do array, caso ele seja menor do que o valor de numero1, ele se tornará o novo valor de numero1 e assim até o final do array. Para o segundo if(numero > numero2), a lógica de raciocínio é similar, mas no caso é para encontrar o maior número. Considerando o primeiro elemento do array, caso ele seja maior que o valor de numero2, que no caso é 0, ele se tornará o novo valor de numero2.
-// O valor de console.log(numero1) será -10 e o console.log(numero2) será 283.
+// O valor de console.log(numero1) será -10 e o console.log(numero2) será 1590.
+
+
+
+
+// Exercícios de Lógica de Programação
+
+// Exercício 1 -
+
+// For, For Of e While.
+
+// Exemplo For:
+
+// let numeros = [1, 55, 14, 10, 12]
+
+// for (let i = 0; i < 5; i ++){
+//     console.log(i)
+// }
+
+
+// Exemplo For... Of... :
+
+// let numeros = [1, 55, 14, 10, 12]
+
+// for (let numero of numeros){
+//     console.log(numero)
+// }
+
+
+// Exemplo While:
+
+// let i = 10
+
+// while (i <= 20){
+//     console.log(i++)
+// }
+
+
+
+// Exercício 2 -
+
+// boolean 1 = true
+// boolean 2 = false
+// boolean3 = true
+// booleano4 = false
+
+// a) false
+// b) false
+// c) true
+// d) true
+// e) true
