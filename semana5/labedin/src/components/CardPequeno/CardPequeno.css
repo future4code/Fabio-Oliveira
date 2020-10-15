@@ -1,0 +1,29 @@
+.card-pequeno-css {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 550px;
+    text-align: center;
+}
+
+.card-pequeno-css > img {
+    width: 70px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.card-pequeno-css h4 {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+    padding-right: 5px;
+}
+
+.card-pequeno-css > div {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+}
