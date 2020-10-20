@@ -26,14 +26,17 @@ class App extends React.Component {
     }
 
   componentDidUpdate() {
-    localStorage.setItem("tasks", JSON.stringify(this.state.tarefas))
+    localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas))
 
   };
 
   componentDidMount() {
-    const taskString = localStorage.getItem("tasks")
-    const taskObject = JSON.parse(taskString)
-    this.setState({tasks: taskObject})
+    if(localStorage.getItem("tarefas")){
+      this.setState({tarefas: JSON.parse(localStorage.getItem("tarefas"))})
+    }
+    // const taskString = localStorage.getItem("tasks")
+    // const taskObject = JSON.parse(taskString)
+    // this.setState({tasks: taskObject})
 
   };
 
