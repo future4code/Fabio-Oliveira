@@ -2,6 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
+const NewUserButton = styled.button`
+margin-left: 5px;
+background-color: pink;
+color: white;
+`
+
 class CreateUser extends React.Component {
     state = {
         name: "",
@@ -36,6 +42,8 @@ class CreateUser extends React.Component {
           });
     
       };
+
+      
     
       onChangeNameValue = (event) => {
         this.setState({ nameValue: event.target.value })
@@ -48,7 +56,7 @@ class CreateUser extends React.Component {
       render() {
     
         return (
-          <div className="App">
+          <div>
             <div>
               <p>Nome:</p>
               <input
@@ -60,8 +68,7 @@ class CreateUser extends React.Component {
                 value={this.state.emailValue}
                 onChange={this.onChangeEmailValue}
               />
-              <button onClick={this.createUser}>Salvar</button>
-              <button onClick={this.props.UserList}>Lista de Usuários Cadastrados</button>
+              <NewUserButton onClick={this.createUser}>Salvar</NewUserButton>
             </div>
     
           </div>

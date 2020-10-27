@@ -30,16 +30,34 @@ class UserList extends React.Component {
         })
       }
 
+      deleteUser = (user) => {
+        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${user.id}`,
+        {
+          headers: {
+            Authorization: "fabio-jordao-dumont"
+          }
+        }).then(response => {
+          this.userListFull()
+        }).catch(error => {
+          alert("Erro ao deletar usuário")
+          console.log(error.message)
+        })
+      }
+
 
     render() {
         const renderedUsers = this.state.users.map((users) => {
             return <p key={users.id}>{users.name}</p>
+            
 
         })
 
         return (
             <div className="App">
+                <h2>Usuários Cadastrados</h2>
+                <ul>
                 {renderedUsers}
+                </ul>
             </div>
         )
 
