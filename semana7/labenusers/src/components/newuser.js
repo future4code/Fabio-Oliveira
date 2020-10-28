@@ -10,8 +10,6 @@ color: white;
 
 class CreateUser extends React.Component {
     state = {
-        name: "",
-        email: "",
         nameValue: "",
         emailValue: "",
     }
@@ -31,8 +29,7 @@ class CreateUser extends React.Component {
               }
             })
           .then((response) => {
-            this.setState({ nameValue: "" })
-            this.setState({ emailValue: "" })
+            this.setState({ nameValue: "" , emailValue: "" })            
             alert("Deu bom, irmão!")
             console.log(response.data)
           })

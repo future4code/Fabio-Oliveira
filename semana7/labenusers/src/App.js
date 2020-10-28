@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 import UserList from './components/users';
 import CreateUser from './components/newuser'
 
@@ -17,7 +16,7 @@ margin-top: 2px;
 class App extends React.Component {
   state = {
     newUserScreen: true,
-    button: "Cadastro de Usuários"
+    button: "Lista de Usuários"
 
   };
 

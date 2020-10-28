@@ -2,6 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
+const DeleteButton = styled.span`
+color: red;
+margin-left: 10px;
+`
+
 class UserList extends React.Component {
     state = {
         users: []
@@ -31,12 +36,13 @@ class UserList extends React.Component {
       }
 
       deleteUser = (user) => {
-        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${user.id}`,
+        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${user}`,
         {
           headers: {
             Authorization: "fabio-jordao-dumont"
           }
         }).then(response => {
+          alert("Usuário excluído com sucesso!")
           this.userListFull()
         }).catch(error => {
           alert("Erro ao deletar usuário")
@@ -47,7 +53,11 @@ class UserList extends React.Component {
 
     render() {
         const renderedUsers = this.state.users.map((users) => {
-            return <p key={users.id}>{users.name}</p>
+            return <p 
+            key={users.id}>
+              {users.name}
+              <DeleteButton onClick={() => this.deleteUser(users.id)}>X</DeleteButton>
+              </p>
             
 
         })
