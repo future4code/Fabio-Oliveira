@@ -1,65 +1,67 @@
 import React, { useState, useEffect } from "react"
-import styled from "styled-components"
 import axios from "axios"
+import { DivSpan, HomeDivButtons, ProfileDiv, ProfileImages, StyledSpan, ImageAsButton, StyledPItalic } from "../styled/styles"
+import like from "../components/img/like-button.png"
+import no from "../components/img/no-button.png"
 
-function Home () {
+function Home() {
 
     const [profile, setProfile] = useState({})
-    const [likebutton, setLikeButton] = useState(false)
 
-    useEffect(()=>{
+    useEffect(() => {
         showProfile()
-    },[])
+    }, [])
 
     const showProfile = () => {
         axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/fabio-jordao/person")
 
-        .then((response) => {
-            setProfile(response.data.profile)
-        }).catch((error) =>{
-            window.alert("Show de erro")
-        })
+            .then((response) => {
+                setProfile(response.data.profile)
+            }).catch((error) => {
+                console.log(error.message)
+            })
     }
 
-    const chooseProfile = () => {
+    const chooseProfile = (like) => {
         const body = {
             id: profile.id,
-            choice: true
+            choice: like
         }
         axios.post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/fabio-jordao/choose-person", body)
 
-        .then((response) => {
-            showProfile()
-            console.log("deu bom")
+            .then((response) => {
+                showProfile()
 
-        }).catch((error)=>{
-            window.alert("Erro de escolha")
-        })
+            }).catch((error) => {
+                console.log(error.message)
+            })
+
+
+    }
+
+    return (
 
         
-    }
-    const onClickLike = () => {
-        setLikeButton(true)
-        chooseProfile()
+        <ProfileDiv>
+            <h1>AstroMatch</h1>
 
-    }
+            <ProfileImages src={profile.photo} />
+            <DivSpan>
+            <StyledSpan>{profile.name} - </StyledSpan>
+            <StyledSpan>{profile.age}</StyledSpan>
+            </DivSpan>
+            <StyledPItalic>{profile.bio}</StyledPItalic>
 
-    const onClickDislike = () => {
-        setLikeButton(false)
-        chooseProfile()
-    }
-    return(
-    <div>
-        <div>
-        <img src={profile.photo}/>
-        <p>{profile.name}</p>
-        <p>{profile.age}</p>
-        <p>{profile.bio}</p>
-        <button onClick={onClickLike}>DÁ LIKE NESSA PORRA</button>
-        <button onClick={onClickDislike}>CHUTA QUE É MACUMBA</button>
-        </div>
-        <p>Tela Principal</p>
-    </div>
+            <HomeDivButtons>
+
+                <ImageAsButton src={like} onClick={() => chooseProfile(true)}></ImageAsButton>
+                <ImageAsButton src={no} onClick={() => chooseProfile(false)}></ImageAsButton>
+
+            </HomeDivButtons>
+
+        </ProfileDiv>
+       
+
     )
 }
 

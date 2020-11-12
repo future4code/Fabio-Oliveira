@@ -1,6 +1,7 @@
-import React, { Profiler, useEffect, useState } from "react"
-import styled from "styled-components"
+import React, { useEffect, useState } from "react"
 import axios from "axios"
+import {DivMatches, ImageAsButton, MatchesImages, ScreenButtonDiv} from "../styled/styles"
+import clearMatches from "../components/img/clear-button.png"
 
 function Matches() {
 
@@ -17,8 +18,8 @@ function Matches() {
 
             .then((response) => {
                 setMatches(response.data.matches)
-            }).catch(() => {
-                window.alert("DEU RUIM, VIADO")
+            }).catch((error) => {
+                console.log(error.message)
             })
 
     }
@@ -30,20 +31,30 @@ function Matches() {
                 showMatches()
             })
             .catch((error) => {
-                console.log("Erro ao limpar matches.")
                 console.log(error.message)
             })
     }
 
     const renderMatches = matches.length ? matches.map((profile)=> {
-        return <li key={profile.id}> <img src={profile.photo}/> {profile.name} </li>
-    }) : <p>Carentão alone</p>
+        return <li key={profile.id}> <MatchesImages src={profile.photo}/> {profile.name} </li>
+    }) : <p>Você não tem nenhum match :(</p>
     return (
         <div>
             
+            <DivMatches>
+
+                <h2>
+                    Lista de Matches:
+                </h2>
             {renderMatches}
 
-            <button onClick={onClickClearMatches}>VAZA FDP</button>
+           
+
+            </DivMatches>
+
+            <ScreenButtonDiv>
+            <ImageAsButton src={clearMatches} onClick={onClickClearMatches}></ImageAsButton>
+            </ScreenButtonDiv>
 
         </div>
     )

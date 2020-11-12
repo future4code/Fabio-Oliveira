@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import styled from "styled-components"
-import axios from "axios"
 import Matches from ".//components/matches"
 import Home from ".//components/home"
+import {MegaDiv, ChangeScreenButton, ScreenButtonDiv, ImageAsButton} from ".//styled/styles"
+import heart from "./components/img/matches-button.png"
 
 function App() {
 
@@ -27,14 +27,14 @@ function App() {
     setScreen(!screen)
   }
 
-
-
-
   return (
-    <div className="App">
+    <MegaDiv>
+       <ScreenButtonDiv>
+      <ImageAsButton src={heart} onClick={changeScreen}></ImageAsButton >
+      </ScreenButtonDiv>
       {screenSelector()}
-      <button onClick={changeScreen}>Mudar Tela</button>
-    </div>
+     
+    </MegaDiv>
   );
 }
 
