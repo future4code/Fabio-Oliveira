@@ -9,8 +9,8 @@ top: 0;
 `
 
 export const ProfileImages = styled.img `
-height: 400px;
-width: 400px;
+height: 300px;
+width: 300px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -83,5 +83,6 @@ padding-bottom: 20px;
 export const StyledPItalic = styled.p`
 font-family: 'Courier New', Courier, monospace;
 font-style: italic;
+text-align: center;
 
 `
