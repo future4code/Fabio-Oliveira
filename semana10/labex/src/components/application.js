@@ -1,13 +1,25 @@
 import React from "react"
 import axios from "axios"
-import styled from "styled-components"
+import { useHistory } from "react-router-dom"
+import {Header} from "./styles"
 
-function ApplicationForm () {
+
+function ApplicationFormPage () {
+    const history = useHistory()
+
+const goToHome = () =>{
+    history.push("/")
+}
+
     return (
         <div>
-
+            <Header>
+                <h2>Labe-X</h2>
+                <button onClick={goToHome}>Voltar para a Home</button>
+            </Header>
+            <p>Formulário de Inscrição</p>
         </div>
     )
 }
 
-export default ApplicationForm
+export default ApplicationFormPage

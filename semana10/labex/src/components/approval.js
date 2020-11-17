@@ -2,8 +2,7 @@ import React from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 
-function CreateTripsPage () {
-
+function ApprovalPage () {
     const history = useHistory()
 
     const goBackToAdminHome = () =>{
@@ -11,10 +10,11 @@ function CreateTripsPage () {
     }
     return (
         <div>
-            <p>Create Your Trips</p>
-            <button onClick={goBackToAdminHome}>Voltar para Home do Administrador</button>
+            <button onClick={goBackToAdminHome}>Voltar para Home do Adminstrador</button>
+            <p>Sim</p>
+            <p>Não</p>
         </div>
     )
 }
 
-export default CreateTripsPage
+export default ApprovalPage
