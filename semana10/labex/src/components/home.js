@@ -1,13 +1,13 @@
 import React from "react"
 import { useHistory } from "react-router-dom"
-import {Header, Main, SubscribeButton} from "./styles"
+import {Footer, FooterLabel, Header, LabeX, Main, ReturnButton, SubscribeButton} from "./styles"
 
 function HomePage () {
 
     const history = useHistory();
 
     const goToApplicationFormPage = () => {
-        history.push("/application")
+        history.push("/tripsuser")
     }
 
     const goToLoginPage = () => {
@@ -16,15 +16,17 @@ function HomePage () {
     return (
         <div>
             <Header>
-                <h2>Labe-X</h2>
-                <button onClick={goToLoginPage}>LOGIN DO ADMINISTRADOR</button>
+                <LabeX>Labe-X</LabeX>
+                <ReturnButton onClick={goToLoginPage}>LOGIN DO ADMINISTRADOR</ReturnButton>
             </Header>
 
             <Main>
             <p>Deseja viajar com a Labe-X? Clique aqui!</p>
             <SubscribeButton onClick={goToApplicationFormPage}>QUERO ME INSCREVER NUMA VIAGEM ESPACIAL!</SubscribeButton>
             </Main>
-
+        <Footer>
+            <FooterLabel>Desbrave o universo com a Labe-X</FooterLabel>
+        </Footer>
         </div>
     )
 }

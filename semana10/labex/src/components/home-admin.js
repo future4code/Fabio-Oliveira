@@ -1,8 +1,9 @@
 import React from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
+import { Header, LabeX, ReturnButton, AdminHome, FooterAdmin, FooterLabel, HomeAdminButtons, AdminButtons } from "./styles"
 
-function AdminHomePage () {
+function AdminHomePage() {
 
     const history = useHistory()
 
@@ -10,26 +11,38 @@ function AdminHomePage () {
         history.push("/create")
     }
 
-    const goToTrips = () =>{
+    const goToTrips = () => {
         history.push("/trips")
     }
 
-    const goToApproval = () =>{
+    const goToApproval = () => {
         history.push("/approval")
     }
 
-    const goToHome = () =>{
+    const goToHome = () => {
         history.push("/")
     }
 
     return (
         <div>
-            <div>
-                <button onClick={goToHome}>Voltar Para Home</button>
-            </div>
-            <button onClick={goToCreateTrips}>Cadastrar Novas Viagens</button>
-            <button onClick={goToTrips}>Exibir suas viagens cadastradas</button>
-            <button onClick={goToApproval}>Listar, aprovar ou rejeitar inscrições</button>
+            <Header>
+                <LabeX>Labe-X</LabeX>
+                <ReturnButton onClick={goToHome}>Voltar Para Home</ReturnButton>
+            </Header>
+
+            <AdminHome>
+                <h2>Seja bem vindo a tela de controle, administrador! Aqui você poderá visualizar as viagens já cadastradas, criar novas viagens para os usuários e aceitar ou rejeitas as solicitaçãos realizadas.</h2>
+                <HomeAdminButtons>
+                <AdminButtons onClick={goToCreateTrips}>Cadastrar Novas Viagens</AdminButtons>
+                <AdminButtons onClick={goToTrips}>Exibir suas viagens cadastradas</AdminButtons>
+                <AdminButtons onClick={goToApproval}>Listar, aprovar ou rejeitar inscrições</AdminButtons>
+                </HomeAdminButtons>
+            </AdminHome>
+
+            <FooterAdmin>
+            <FooterLabel>Desbrave o universo com a Labe-X</FooterLabel>
+        </FooterAdmin>
+
         </div>
     )
 }

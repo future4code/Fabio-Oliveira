@@ -8,6 +8,7 @@ import ApprovalPage from "./approval"
 import TripsPage from "./trips"
 import AdminHomePage from "./home-admin"
 import ErrorPage from "./error"
+import UserTrip from "./trips-user.js"
 
 function Router () {
     return (
@@ -41,6 +42,10 @@ function Router () {
                 <AdminHomePage/>
             </Route>
 
+            <Route exact path="tripsuser">
+
+            </Route>
+            <UserTrip />
             <Route>
                 <ErrorPage />
             </Route>

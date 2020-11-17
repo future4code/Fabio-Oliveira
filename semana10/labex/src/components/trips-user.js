@@ -1,19 +1,24 @@
 import React from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
-import { Header, LabeX, ReturnButton, FooterTrips, FooterLabel, StyledH2Div } from "./styles"
+import { Header, LabeX, ReturnButton, FooterTrips, FooterLabel, StyledH2Div, FormButton } from "./styles"
 
-function TripsPage () {
+function UserTrip () {
     const history = useHistory()
 
-    const goBackToAdminHome = () =>{
-        history.push("/homeadmin")
+    const goBackToHome = () =>{
+        history.push("/")
     }
+
+    const goToApplicationFormPage = () => {
+        history.push("/application")
+    }
+
     return (
         <div>
             <Header>
             <LabeX>Labe-X</LabeX>
-            <ReturnButton onClick={goBackToAdminHome}>Voltar para Home do Adminstrador</ReturnButton>
+            <ReturnButton onClick={goBackToHome}>Voltar para Home</ReturnButton>
             </Header>
 
             <div>
@@ -29,12 +34,14 @@ function TripsPage () {
                 <p>Data de viagem:</p>
                 <p>Duração da viagem:</p>
                 </li>
+                <FormButton onClick={goToApplicationFormPage}>Inscreva-se!</FormButton>
                 <li>
                 <p>Nome:</p>
                 <p>Planeta:</p>
                 <p>Data de viagem:</p>
                 <p>Duração da viagem:</p>
                 </li>
+                <FormButton onClick={goToApplicationFormPage}>Inscreva-se!</FormButton>
                 </strong>
                 </ol>
             </div>
@@ -46,4 +53,4 @@ function TripsPage () {
     )
 }
 
-export default TripsPage
+export default UserTrip
