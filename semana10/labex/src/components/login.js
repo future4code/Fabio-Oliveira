@@ -1,18 +1,46 @@
-import React from "react"
+import {React, useEffect} from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 import { FormButton, Header, Login, FooterLogin, FooterLabel, ReturnButton, LabeX } from "./styles"
+import { useInput } from "./hooks/useInput"
 
 function LoginPage () {
 
+    const [email, handleEmail] = useInput()
+    const [password, handlePassword] = useInput()
     const history = useHistory()
+
+    useEffect(()=>{
+        const token = localStorage.getItem('token');
+
+        if (token) {
+            history.push ("/homeadmin")
+        }
+    })
 
     const goBackToHomePage = () =>{
         history.push("/")
     }
 
-    const goToAdminHomePage = () => {
-        history.push ("/homeadmin")
+    const login = () => {
+        const body = {
+            email: email,
+            password: password
+
+        }
+
+        axios
+        .post(
+            "https://us-central1-labenu-apis.cloudfunctions.net/labeX/fabio-dumont/login", body
+        )
+        .then((res)=>{
+            localStorage.setItem('token', res.data.token);
+            history.push("/homeadmin")
+
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
     }
     return (
         <div>
@@ -26,12 +54,12 @@ function LoginPage () {
             <h3>Já faz parte da nossa comunidade? Faça seu login abaixo:</h3>
 
             <label>E-mail:</label>
-            <input></input>
+            <input value={email} onChange={handleEmail} type='email'></input>
 
             <label>Senha:</label>
-            <input></input>
+            <input type='password' value={password} onChange={handlePassword}></input>
 
-            <FormButton onClick={goToAdminHomePage}>Entrar</FormButton>
+            <FormButton onClick={login}>Entrar</FormButton>
             </Login>
             
             <FooterLogin>

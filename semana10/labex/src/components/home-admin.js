@@ -2,6 +2,7 @@ import React from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 import { Header, LabeX, ReturnButton, AdminHome, FooterAdmin, FooterLabel, HomeAdminButtons, AdminButtons } from "./styles"
+import { useProtectedPage } from "./hooks/useProtectedPage"
 
 function AdminHomePage() {
 
@@ -22,6 +23,8 @@ function AdminHomePage() {
     const goToHome = () => {
         history.push("/")
     }
+
+    useProtectedPage()
 
     return (
         <div>

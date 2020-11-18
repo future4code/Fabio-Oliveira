@@ -178,6 +178,14 @@ bottom: 0;
 margin-top: 65px;
 `
 
+export const FooterTripsUser = styled.div`
+display: flex;
+justify-content: flex-end;
+background-color: #8FBC8F;
+bottom: 0;
+margin-top: 133px;
+`
+
 
 
 

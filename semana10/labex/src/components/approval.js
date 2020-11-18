@@ -2,6 +2,7 @@ import React from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 import { Header, LabeX, ReturnButton, FooterLabel, FooterApproval, StyledPositiveSpan, StyledH2Div, StyledNegativeSpan } from "./styles"
+import { useProtectedPage } from "./hooks/useProtectedPage"
 
 
 function ApprovalPage() {
@@ -10,6 +11,8 @@ function ApprovalPage() {
     const goBackToAdminHome = () => {
         history.push("/homeadmin")
     }
+
+    useProtectedPage();
     return (
         <div>
 

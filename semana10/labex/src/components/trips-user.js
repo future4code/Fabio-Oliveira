@@ -1,7 +1,7 @@
 import React from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
-import { Header, LabeX, ReturnButton, FooterTrips, FooterLabel, StyledH2Div, FormButton } from "./styles"
+import { Header, LabeX, ReturnButton, FooterTripsUser, FooterLabel, StyledH2Div, FormButton } from "./styles"
 
 function UserTrip () {
     const history = useHistory()
@@ -46,9 +46,9 @@ function UserTrip () {
                 </ol>
             </div>
 
-            <FooterTrips>
+            <FooterTripsUser>
             <FooterLabel>Desbrave o universo com a Labe-X</FooterLabel>
-        </FooterTrips>
+        </FooterTripsUser>
         </div>
     )
 }

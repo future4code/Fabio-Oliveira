@@ -2,6 +2,7 @@ import React from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 import { Header, LabeX, ReturnButton, FooterLabel, FooterCreate, CreateTrips, TextBox } from "./styles"
+import { useProtectedPage } from "./hooks/useProtectedPage"
 
 function CreateTripsPage () {
 
@@ -10,6 +11,7 @@ function CreateTripsPage () {
     const goBackToAdminHome = () =>{
         history.push("/homeadmin")
     }
+    useProtectedPage();
     return (
 
         <div>
