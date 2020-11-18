@@ -1,7 +1,7 @@
 import {React, useEffect} from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
-import { FormButton, Header, Login, FooterLogin, FooterLabel, ReturnButton, LabeX } from "./styles"
+import { FormButton, Header, Login, HeaderLabel, ReturnButton, LabeX } from "./styles"
 import { useInput } from "./hooks/useInput"
 
 function LoginPage () {
@@ -47,6 +47,7 @@ function LoginPage () {
 
         <Header>
             <LabeX>Labe-X</LabeX>
+            <HeaderLabel>Desbrave o universo com a Labe-X</HeaderLabel>
             <ReturnButton onClick={goBackToHomePage}>Voltar para Home</ReturnButton>
         </Header> 
 
@@ -62,9 +63,6 @@ function LoginPage () {
             <FormButton onClick={login}>Entrar</FormButton>
             </Login>
             
-            <FooterLogin>
-            <FooterLabel>Desbrave o universo com a Labe-X</FooterLabel>
-        </FooterLogin>
             </div>
     )
 }

@@ -1,6 +1,7 @@
 function Countries () {
     return (
         <select id="country" name="country">
+   <option value="Seleção">Selecione seu país</option>         
    <option value="Afganistan">Afghanistan</option>
    <option value="Albania">Albania</option>
    <option value="Algeria">Algeria</option>

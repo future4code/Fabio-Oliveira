@@ -1,6 +1,6 @@
 import React from "react"
 import { useHistory } from "react-router-dom"
-import {Footer, FooterLabel, Header, LabeX, Main, ReturnButton, SubscribeButton} from "./styles"
+import { HeaderLabel, Header, LabeX, Main, ReturnButton, SubscribeButton} from "./styles"
 
 function HomePage () {
 
@@ -17,16 +17,14 @@ function HomePage () {
         <div>
             <Header>
                 <LabeX>Labe-X</LabeX>
+                <HeaderLabel>Desbrave o universo com a Labe-X</HeaderLabel>
                 <ReturnButton onClick={goToLoginPage}>LOGIN DO ADMINISTRADOR</ReturnButton>
             </Header>
 
             <Main>
-            <p>Deseja viajar com a Labe-X? Clique aqui!</p>
+            <h1>Deseja viajar com a Labe-X? Clique aqui!</h1>
             <SubscribeButton onClick={goToApplicationFormPage}>QUERO ME INSCREVER NUMA VIAGEM ESPACIAL!</SubscribeButton>
             </Main>
-        <Footer>
-            <FooterLabel>Desbrave o universo com a Labe-X</FooterLabel>
-        </Footer>
         </div>
     )
 }

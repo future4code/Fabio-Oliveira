@@ -1,7 +1,7 @@
 import React from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
-import {Form, FormButton, Header, FooterForm, FooterLabel, LabeX, ReturnButton, TextBox} from "./styles"
+import {Form, FormButton, Header, HeaderLabel, LabeX, ReturnButton, TextBox} from "./styles"
 import Countries from "./assets/countries"
 
 
@@ -16,6 +16,7 @@ const goToTrips = () =>{
         <div>
             <Header>
                 <LabeX>Labe-X</LabeX>
+                <HeaderLabel>Desbrave o universo com a Labe-X</HeaderLabel>
                 <ReturnButton onClick={goToTrips}>Voltar para Viagens</ReturnButton>
             </Header>
 
@@ -40,10 +41,6 @@ const goToTrips = () =>{
             <FormButton>Cadastrar</FormButton>
 
             </Form>
-
-            <FooterForm>
-            <FooterLabel>Desbrave o universo com a Labe-X</FooterLabel>
-        </FooterForm>
             
         </div>
     )

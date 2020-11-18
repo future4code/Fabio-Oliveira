@@ -18,7 +18,7 @@ function Router () {
                 <HomePage/>
             </Route>
 
-            <Route exact path="/application">
+            <Route exact path="/application/:id">
                 <ApplicationFormPage />
             </Route>
 

@@ -1,7 +1,6 @@
 import React from "react"
-import axios from "axios"
 import { useHistory } from "react-router-dom"
-import { Header, LabeX, ReturnButton, AdminHome, FooterAdmin, FooterLabel, HomeAdminButtons, AdminButtons } from "./styles"
+import { Header, LabeX, ReturnButton, AdminHome,  HeaderLabel, HomeAdminButtons, AdminButtons } from "./styles"
 import { useProtectedPage } from "./hooks/useProtectedPage"
 
 function AdminHomePage() {
@@ -30,6 +29,7 @@ function AdminHomePage() {
         <div>
             <Header>
                 <LabeX>Labe-X</LabeX>
+                <HeaderLabel>Desbrave o universo com a Labe-X</HeaderLabel>
                 <ReturnButton onClick={goToHome}>Voltar Para Home</ReturnButton>
             </Header>
 
@@ -41,10 +41,6 @@ function AdminHomePage() {
                 <AdminButtons onClick={goToApproval}>Listar, aprovar ou rejeitar inscrições</AdminButtons>
                 </HomeAdminButtons>
             </AdminHome>
-
-            <FooterAdmin>
-            <FooterLabel>Desbrave o universo com a Labe-X</FooterLabel>
-        </FooterAdmin>
 
         </div>
     )
