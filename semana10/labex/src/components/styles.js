@@ -20,7 +20,7 @@ justify-content: center;
 align-items: center;
 `
 
-export const Form = styled.div`
+export const Form = styled.form`
 display: flex;
 margin-top: 131px;
 flex-direction: column;
@@ -118,10 +118,16 @@ align-items: center;
 
 export const StyledPositiveSpan = styled.span`
 color: #FFD700;
+:hover{
+    cursor:pointer;
+}
 `
 
 export const StyledNegativeSpan = styled.span`
 color: white;
+:hover{
+    cursor: pointer;
+}
 `
 
 

@@ -1,4 +1,4 @@
-import {React, useState} from "react"
+import {React, useEffect, useState} from "react"
 import axios from "axios"
 import { useHistory, useParams } from "react-router-dom"
 import { Header, LabeX, ReturnButton, HeaderLabel,  StyledPositiveSpan, StyledH2Div, StyledNegativeSpan } from "./styles"
@@ -21,7 +21,7 @@ function ApprovalPage() {
 
     const getCandidates = () => {
         axios
-            .get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/fabio-dummont/trip/${id}`, {
+            .get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/fabio-dumont/trip/${id}`, {
 
                 headers: {
                     auth: token
@@ -37,6 +37,10 @@ function ApprovalPage() {
 
     }
 
+    useEffect (()=>{
+        getCandidates()
+    }, [])
+
     const acception = (candidatesId) => {
         const body = {
             approve: true
@@ -49,6 +53,7 @@ function ApprovalPage() {
                 }
             })
             .then((res) => {
+                alert(res.data.message)
                 alert("Viajante apto para viajar com a Labe-X!")
             })
             .catch((err) => {
@@ -73,6 +78,7 @@ function ApprovalPage() {
             })
     }
 
+    console.log(newCandidates)
     useProtectedPage();
     return (
         <div>
@@ -88,25 +94,25 @@ function ApprovalPage() {
             </StyledH2Div>
                 <h3>{trip}</h3>
             <div>
-                {newCandidates.length === 0 ? (<p>Lista vazia.</p>) : (newCandidates.map((candidate) => {
+                {newCandidates.length === 0 ? (<p>Lista vazia.</p>) : (newCandidates.map(candidate => {
                     return (
-                        <ol>
-
-                            <li>
+                                <div>
                                 <p>Nome do Candidato: {candidate.name}</p>
                                 <p>Idade:{candidate.age}</p>
                                 <p>Profissão:{candidate.profession}</p>
                                 <p>Texto de inscrição:{candidate.applicationText}</p>
                                 <p>País:{candidate.country}</p>
-                            </li>
-                            <StyledPositiveSpan onClick={acception}>Aceitar</StyledPositiveSpan> <StyledNegativeSpan onClick={denial}>Rejeitar</StyledNegativeSpan>
+                                
+                            
+                            <StyledPositiveSpan onClick={acception}>Aceitar</StyledPositiveSpan> <StyledNegativeSpan onClick={!acception}>Rejeitar</StyledNegativeSpan>
 
-                        </ol>
+                        </div>
 
                     )
                 }))}
 
             </div>
+            
         </div>
 
 

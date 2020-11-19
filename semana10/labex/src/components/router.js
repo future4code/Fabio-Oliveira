@@ -30,7 +30,7 @@ function Router () {
                 <CreateTripsPage/>
             </Route>
 
-            <Route exact path="/approval">
+            <Route exact path="/approval/:id">
                 <ApprovalPage/>
             </Route>
 

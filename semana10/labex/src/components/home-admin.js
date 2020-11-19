@@ -1,5 +1,5 @@
 import React from "react"
-import { useHistory } from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
 import { Header, LabeX, ReturnButton, AdminHome,  HeaderLabel, HomeAdminButtons, AdminButtons } from "./styles"
 import { useProtectedPage } from "./hooks/useProtectedPage"
 
@@ -15,8 +15,8 @@ function AdminHomePage() {
         history.push("/trips")
     }
 
-    const goToApproval = () => {
-        history.push("/approval")
+    const goToApproval = (tripId) => {
+        history.push(`/approval/${tripId}`)
     }
 
     const goToHome = () => {

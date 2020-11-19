@@ -11,6 +11,10 @@ function TripsPage () {
         history.push("/homeadmin")
     }
 
+    const goToApproval = (tripId) => {
+        history.push(`/approval/${tripId}`)
+    }
+
     const [trips, setTrips] = useState([])
 
     const getTrips = () =>{
@@ -53,6 +57,7 @@ function TripsPage () {
                 <p>Duração da viagem: {trip.durationInDays} dias</p>
                 <p>Data da viagem: {trip.date}</p>
                 <p>Descrição: {trip.description}</p>
+                <button onClick={() => goToApproval(trip.id)}>Ver mais</button>
                 <br></br>
                 </strong>
                 
