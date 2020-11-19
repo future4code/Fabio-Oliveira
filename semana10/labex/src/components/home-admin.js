@@ -38,7 +38,6 @@ function AdminHomePage() {
                 <HomeAdminButtons>
                 <AdminButtons onClick={goToCreateTrips}>Cadastrar Novas Viagens</AdminButtons>
                 <AdminButtons onClick={goToTrips}>Exibir suas viagens cadastradas</AdminButtons>
-                <AdminButtons onClick={goToApproval}>Listar, aprovar ou rejeitar inscrições</AdminButtons>
                 </HomeAdminButtons>
             </AdminHome>
 

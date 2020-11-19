@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
-import { Header, LabeX, ReturnButton,  HeaderLabel, StyledH2Div } from "./styles"
+import { Header, LabeX, ReturnButton,  HeaderLabel, StyledH2Div, FormButton } from "./styles"
 import { useProtectedPage } from "./hooks/useProtectedPage"
 
 function TripsPage () {
@@ -57,7 +57,7 @@ function TripsPage () {
                 <p>Duração da viagem: {trip.durationInDays} dias</p>
                 <p>Data da viagem: {trip.date}</p>
                 <p>Descrição: {trip.description}</p>
-                <button onClick={() => goToApproval(trip.id)}>Ver mais</button>
+                <FormButton onClick={() => goToApproval(trip.id)}>Ver mais</FormButton>
                 <br></br>
                 </strong>
                 

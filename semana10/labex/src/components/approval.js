@@ -41,9 +41,9 @@ function ApprovalPage() {
         getCandidates()
     }, [])
 
-    const acception = (candidatesId) => {
+    const acception = (decision, candidatesId) => {
         const body = {
-            approve: true
+            approve: decision
         }
 
         axios
@@ -52,33 +52,22 @@ function ApprovalPage() {
                     auth: token
                 }
             })
-            .then((res) => {
-                alert(res.data.message)
-                alert("Viajante apto para viajar com a Labe-X!")
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }
+            .then(() => {
 
-    const denial = (candidatesId) => {
-        const body = {
-            approve: false
-        }
-            .put(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/fabio-dumont/trips/${id}/candidates/${candidatesId}/decide`, body, {
-                headers: {
-                    auth: token
+                if(decision){
+                    alert("Viajante apto para viajar com a Labe-X!")
+
                 }
-            })
-            .then((res) => {
-                alert("Viajante inapto de viajar com a Labe-X!")
+                else {
+                    alert("Viajante inapto de viajar com a Labe-X!")
+                }
+                
+                
             })
             .catch((err) => {
                 console.log(err)
             })
     }
-
-    console.log(newCandidates)
     useProtectedPage();
     return (
         <div>
@@ -98,13 +87,13 @@ function ApprovalPage() {
                     return (
                                 <div>
                                 <p>Nome do Candidato: {candidate.name}</p>
-                                <p>Idade:{candidate.age}</p>
-                                <p>Profissão:{candidate.profession}</p>
-                                <p>Texto de inscrição:{candidate.applicationText}</p>
-                                <p>País:{candidate.country}</p>
+                                <p>Idade: {candidate.age}</p>
+                                <p>Profissão: {candidate.profession}</p>
+                                <p>Texto de inscrição: {candidate.applicationText}</p>
+                                <p>País: {candidate.country}</p>
                                 
                             
-                            <StyledPositiveSpan onClick={acception}>Aceitar</StyledPositiveSpan> <StyledNegativeSpan onClick={!acception}>Rejeitar</StyledNegativeSpan>
+                            <StyledPositiveSpan onClick={() => acception(true, candidate.id)}>Aceitar</StyledPositiveSpan> <StyledNegativeSpan onClick={() => acception(false, candidate.id)}>Rejeitar</StyledNegativeSpan>
 
                         </div>
 
