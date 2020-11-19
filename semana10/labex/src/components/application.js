@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import axios from "axios"
 import { useHistory, useParams } from "react-router-dom"
-import {Form, FormButton, Header, HeaderLabel, LabeX, ReturnButton, TextBox} from "./styles"
+import {Form, FormButton, Header, HeaderLabel, LabeX, ReturnButton, TextBox, userProfession} from "./styles"
 import Countries from "./assets/countries"
 import {useForm} from "../components/hooks/useForm"
 
@@ -65,7 +65,7 @@ const goToTrips = () =>{
             name="name"
             value={form.name}
             type="text"
-            pattern="[A-Za-z ]{3,}"
+            pattern="/^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{3,}$/g"
             onChange={onChangeInput}
             ></input>
 
@@ -85,7 +85,8 @@ const goToTrips = () =>{
             name="applicationText"
             value={form.applicationText}
             type="text"
-            pattern="[A-Za-z ]{30,}"
+            pattern="/^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{30,}$/g"
+            placeholder="Escreva no mínimo 30 caracteres"
             onChange={onChangeInput}
             ></TextBox>
 
@@ -95,7 +96,8 @@ const goToTrips = () =>{
             name="profession"
             value={form.profession}
             type="text"
-            pattern="[A-Za-z ]{10,}"
+            placeholder="Escreva no mínimo 10 caracteres"
+            pattern="/^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{10,}$/g"
             onChange={onChangeInput}
             ></input>
 

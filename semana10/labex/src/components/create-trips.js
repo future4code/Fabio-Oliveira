@@ -67,7 +67,7 @@ function CreateTripsPage() {
                         name="name"
                         type="text"
                         value={form.name}
-                        pattern="{5,}"
+                        pattern="/^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{5,}$/g"
                         onChange={onChangeInput} />
 
                     <label>Planeta:</label>
@@ -94,7 +94,7 @@ function CreateTripsPage() {
                         required
                         name="description"
                         value={form.description}
-                        pattern="{30,}"
+                        pattern="/^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{30,}$/g"
                         onChange={onChangeInput} />
 
                     <FormButton type="submit">Cadastrar</FormButton>
