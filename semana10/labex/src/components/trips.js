@@ -33,11 +33,15 @@ function TripsPage () {
         getTrips()
     }, [])
 
+    const goToHome = () => {
+        history.push("/")
+    }
+
     useProtectedPage();
     return (
         <div>
             <Header>
-            <LabeX>Labe-X</LabeX>
+            <LabeX onClick={goToHome}>Labe-X</LabeX>
             <HeaderLabel>Desbrave o universo com a Labe-X</HeaderLabel>
             <ReturnButton onClick={goBackToAdminHome}>Voltar para Home do Adminstrador</ReturnButton>
             </Header>

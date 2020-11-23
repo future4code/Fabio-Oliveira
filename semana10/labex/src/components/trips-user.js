@@ -32,10 +32,14 @@ function UserTrip() {
         getTripsUser()
     }, [])
 
+    const goToHome = () => {
+        history.push("/")
+    }
+
     return (
         <div>
             <Header>
-                <LabeX>Labe-X</LabeX>
+                <LabeX onClick={goToHome}>Labe-X</LabeX>
                 <HeaderLabel>Desbrave o universo com a Labe-X</HeaderLabel>
                 <ReturnButton onClick={goBackToHome}>Voltar para Home</ReturnButton>
             </Header>

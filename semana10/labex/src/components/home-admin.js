@@ -28,7 +28,7 @@ function AdminHomePage() {
     return (
         <div>
             <Header>
-                <LabeX>Labe-X</LabeX>
+                <LabeX onClick={goToHome}>Labe-X</LabeX>
                 <HeaderLabel>Desbrave o universo com a Labe-X</HeaderLabel>
                 <ReturnButton onClick={goToHome}>Voltar Para Home</ReturnButton>
             </Header>

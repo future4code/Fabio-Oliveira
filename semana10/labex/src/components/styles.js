@@ -26,6 +26,7 @@ margin-top: 131px;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
 `
 
 export const SubscribeButton = styled.button`
@@ -34,6 +35,9 @@ height: 200px;
 background-color: black;
 color: white;
 border-radius: 20px;
+:hover{
+    cursor:pointer;
+}
 `
 
 export const FormButton = styled.button `
@@ -41,6 +45,9 @@ margin-top: 5px;
 border-radius: 200px;
 background-color: black;
 color: white;
+:hover{
+    cursor:pointer;
+}
 `
 
 export const Login = styled.div`
@@ -59,11 +66,17 @@ margin-top: 25px;
 background-color: black;
 color: white;
 border-radius: 200px;
+:hover{
+    cursor:pointer;
+}
 `
 
 export const LabeX = styled.h2`
 margin-left: 15px;
 font-size: 30px;
+:hover {
+    cursor: pointer;
+}
 
 `
 export const HeaderLabel = styled.h3`
@@ -101,6 +114,10 @@ height: 200px;
 background-color: black;
 color: white;
 border-radius: 200px;
+:hover{
+    cursor:pointer;
+}
+
 `
 
 export const CreateTrips = styled.div`

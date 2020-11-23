@@ -22,6 +22,10 @@ function ApplicationFormPage () {
 
     const {id} = useParams();
 
+    const goToHome = () => {
+        history.push("/")
+    }
+
     const onSubmitForm = (event) => {
         event.preventDefault();
         userApplication();
@@ -50,7 +54,7 @@ const goToTrips = () =>{
     return (
         <div>
             <Header>
-                <LabeX>Labe-X</LabeX>
+                <LabeX onClick={goToHome}>Labe-X</LabeX>
                 <HeaderLabel>Desbrave o universo com a Labe-X</HeaderLabel>
                 <ReturnButton onClick={goToTrips}>Voltar para Viagens</ReturnButton>
             </Header>

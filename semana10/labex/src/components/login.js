@@ -42,11 +42,15 @@ function LoginPage () {
             console.log(err);
         })
     }
+
+    const goToHome = () => {
+        history.push("/")
+    }
     return (
         <div>
 
         <Header>
-            <LabeX>Labe-X</LabeX>
+            <LabeX onClick={goToHome}>Labe-X</LabeX>
             <HeaderLabel>Desbrave o universo com a Labe-X</HeaderLabel>
             <ReturnButton onClick={goBackToHomePage}>Voltar para Home</ReturnButton>
         </Header> 
