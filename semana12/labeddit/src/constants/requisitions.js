@@ -13,7 +13,7 @@ export const login = (body, history) =>{
     })
 
     .catch((error)=>{
-        alert("Erro ou senha inválido.")
+        alert("Email ou senha inválido.")
         console.log(error.message)
     })
 
@@ -29,6 +29,26 @@ export const signUp = (body, history) =>{
     })
 
     .catch((error)=>{
+        console.log(error.message)
+    })
+}
+
+export const newPost = (body, history) =>{
+
+    const token = localStorage.getItem('token')
+    axios
+    .post(`${baseUrl}/posts`, body, {
+        headers: {
+            Authorization: token
+        }
+    })
+
+    .then(()=>{
+        goToFeed(history)
+    })
+
+    .catch((error)=>{
+        alert("Erro ao criar post.")
         console.log(error.message)
     })
 }
