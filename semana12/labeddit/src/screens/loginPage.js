@@ -12,7 +12,7 @@ const LoginPage = () => {
 
     const history = useHistory()
 
-    const { form, onChange } = useForm({ email: "", password: "" })
+    const { form, onChange, resetForm } = useForm({ email: "", password: "" })
 
     const handleInput = (event) => {
         const { value, name } = event.target
@@ -23,6 +23,7 @@ const LoginPage = () => {
     const handleSubmission = (event) => {
         event.preventDefault()
         login(form, history)
+        resetForm()
     }
 
     return (

@@ -10,7 +10,7 @@ const RegisterPage = () => {
 
     const history = useHistory()
 
-    const { form, onChange } = useForm({ username: "", email: "", password: "" })
+    const { form, onChange, resetForm } = useForm({ username: "", email: "", password: "" })
 
     const handleInput = (event) => {
         const { value, name } = event.target
@@ -21,6 +21,7 @@ const RegisterPage = () => {
     const handleSubmission = (event) => {
         event.preventDefault()
         signUp(form, history)
+        resetForm()
     }
 
     return (

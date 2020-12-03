@@ -44,11 +44,65 @@ export const newPost = (body, history) =>{
     })
 
     .then(()=>{
+        alert('Post criado com sucesso!')
         goToFeed(history)
     })
 
     .catch((error)=>{
         alert("Erro ao criar post.")
         console.log(error.message)
+    })
+}
+
+export const createComment = (body, postId) =>{
+
+    const token = localStorage.getItem('token')
+    axios
+    .post(`${baseUrl}/posts/${postId}/comment`, body, 
+    {headers: 
+        {Authorization: token}
+    
+    })
+    .then (()=>{
+        alert("Comentário enviado com sucesso!")
+    })
+    .catch((err)=>{
+        alert("Errado!")
+        console.log(err.message)
+    })
+}
+
+export const votePost = (body, postId) => {
+    const token = localStorage.getItem('token') 
+    axios
+    .put(`${baseUrl}/posts/${postId}/vote`, body, {headers: 
+        {Authorization: token}
+    
+    })
+
+    .then(()=>{
+        alert("Foi!")
+    })
+    .catch((err)=>{
+        alert("Deu erro")
+        console.log(err)
+    })
+}
+
+export const voteComment = (body, postId, commentId) => {
+    const token = localStorage.getItem('token')
+    axios
+    .put (`${baseUrl}/posts/${postId}/comment/${commentId}/vote`, body, {headers: 
+        {Authorization: token}
+    
+    })
+
+    .then(()=>{
+        alert("Foi!")
+    })
+
+    .catch((err)=>{
+        alert("Não foi!")
+        console.log(err)
     })
 }

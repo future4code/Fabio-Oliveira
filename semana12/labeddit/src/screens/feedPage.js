@@ -8,8 +8,9 @@ import { CardPosts } from '../styles/styles'
 import { newPost } from '../constants/requisitions'
 import {useForm} from '../hooks/useForm'
 import {goToPost} from '../router/coordinator'
+import PostCard from '../components/PostCard'
 
-const FeedPage = () => {
+const FeedPage = (props) => {
 
     useProtectedPage()
 
@@ -17,7 +18,7 @@ const FeedPage = () => {
 
     const history = useHistory()
 
-    const { form, onChange } = useForm({ text: "", title: "" })
+    const { form, onChange, resetForm } = useForm({ text: "", title: "" })
 
     const handleInput = (event) => {
         const { value, name } = event.target
@@ -28,6 +29,7 @@ const FeedPage = () => {
     const handleSubmission = (event) => {
         event.preventDefault()
         newPost(form, history)
+        resetForm()
     }
 
     return (
@@ -55,19 +57,15 @@ const FeedPage = () => {
                 </form>
             </div>
 
-            {posts.map((post) => {
+            {!posts ? <p>Carregando...</p> : posts.map((post) => {
 
-                return (
-                <CardPosts key={post.id}>
+                return <PostCard
 
-                    <h2>{post.title}</h2>
-                    <h4>{post.username}</h4>
-                    <p>{ post.text}</p>
-                    <p>{ post.userVoteDirection}</p>
-                    <p>{ post.votesCount}</p>
-                    <button onClick={() => goToPost(history)}>Ir para detalhes</button>
-                </CardPosts>
-            )})}
+                    id={post.id} title={post.title} text={post.text} username={post.username} votesCount={post.votesCount} direction={post.userVoteDirection} commentsCount={post.commentsCount}
+
+                    />
+            })
+            }
         </div>
     )
 
