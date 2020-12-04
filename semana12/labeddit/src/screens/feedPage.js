@@ -4,7 +4,7 @@ import { useProtectedPage } from '../hooks/useProtectedPage'
 import { useHistory } from 'react-router-dom'
 import { useRequestData } from '../hooks/useRequestData'
 import { baseUrl } from '../constants/urls'
-import { CardPosts } from '../styles/styles'
+import { ButtonLogout, CardPosts, FeedDiv, FeedInput, InfoLabel, InfoP } from '../styles/styles'
 import { newPost } from '../constants/requisitions'
 import {useForm} from '../hooks/useForm'
 import {goToPost} from '../router/coordinator'
@@ -35,29 +35,29 @@ const FeedPage = (props) => {
     return (
         <div>
 
-            <div>
+            <FeedDiv>
                 <form onSubmit={handleSubmission}>
-
-                    <input
+                    <InfoLabel>Crie seu post e compartilhe com seus amigos :D</InfoLabel>
+                    <FeedInput
                     placeholder="Escreva o título do post"
                     name="title"
                     value={form.title}
                     onChange={handleInput}
                     />
 
-                    <input
+                    <FeedInput
                     placeholder="Escreva o post"
                     name="text"
                     value={form.text}
                     onChange={handleInput}
                     />
 
-                    <button type="submit">Enviar</button>
+                    <ButtonLogout type="submit">Enviar</ButtonLogout>
 
                 </form>
-            </div>
+            </FeedDiv>
 
-            {!posts ? <p>Carregando...</p> : posts.map((post) => {
+            {!posts ? <InfoP>Carregando...</InfoP> : posts.map((post) => {
 
                 return <PostCard
 

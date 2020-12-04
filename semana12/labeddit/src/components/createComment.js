@@ -1,6 +1,7 @@
 import react from 'react'
 import {useForm} from '../hooks/useForm'
 import { createComment } from '../constants/requisitions'
+import { ButtonLogout, CardPosts, StyledInput } from '../styles/styles'
 
 const CreateComment = (props) => {
 
@@ -19,17 +20,17 @@ const CreateComment = (props) => {
     }
 
     return (
-        <div>
+        <CardPosts>
             <form onSubmit={handleSubmission}> 
-                <input 
+                <StyledInput
                 placeholder="Comente aqui"
                 value={form.text}
                 name="text"
                 onChange={handleInput}
                 />
-                <button type="submit">Comentar</button>
+                <ButtonLogout type="submit">Comentar</ButtonLogout>
             </form>
-        </div>
+        </CardPosts>
     )
 
 }

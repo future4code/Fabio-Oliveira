@@ -2,7 +2,7 @@ import react from 'react'
 import { useHistory } from 'react-router-dom'
 import { votePost } from '../constants/requisitions'
 import { goToPost } from '../router/coordinator'
-import { CardPosts } from '../styles/styles'
+import { ButtonLogout, CardPosts, InfoH1, InfoH3, InfoP } from '../styles/styles'
 
 const PostCard = (props) => {
 
@@ -20,9 +20,9 @@ const PostCard = (props) => {
         if (props.direction === 0) {
             return (
                 <div>
-                    <button onClick={() => handleVote(1)}>Votar</button>
-                    <p>Votos: {props.votesCount}</p>
-                    <p>Comentários: {props.commentsCount}</p>
+                    <ButtonLogout onClick={() => handleVote(1)}>Votar</ButtonLogout>
+                    <InfoP>Votos: {props.votesCount}</InfoP>
+                    <InfoP>Comentários: {props.commentsCount}</InfoP>
                 </div>
 
             )
@@ -30,27 +30,27 @@ const PostCard = (props) => {
         } else if (props.direction === 1) {
             return (
                 <div>
-                    <button onClick={() => handleVote(0)}>Votar</button>
-                    <p>Votos: {props.votesCount}</p>
-                    <p>Comentários: {props.commentsCount}</p>
+                    <ButtonLogout onClick={() => handleVote(0)}>Votar</ButtonLogout>
+                    <InfoP>Votos: {props.votesCount}</InfoP>
+                    <InfoP>Comentários: {props.commentsCount}</InfoP>
                 </div>
             )
         } else {
             <div>
-                <button onClick={() => handleVote(1)}>Votar</button>
-                <p>Votos: {props.votesCount}</p>
-                <p>Comentários: {props.commentsCount}</p>
+                <ButtonLogout onClick={() => handleVote(1)}>Votar</ButtonLogout>
+                <InfoP>Votos: {props.votesCount}</InfoP>
+                <InfoP>Comentários: {props.commentsCount}</InfoP>
             </div>
         }
     }
 
     return (
         <CardPosts>
-            <h3>{props.username}</h3>
-            <h1>{props.title}</h1>
-            <p>{props.text}</p>
+            <InfoH3>Usuário: {props.username}</InfoH3>
+            <InfoH1>{props.title}</InfoH1>
+            <InfoP>{props.text}</InfoP>
             {like()}
-            <button onClick={() => goToPost(history, props.id)}>Ver mais</button>
+            <ButtonLogout onClick={() => goToPost(history, props.id)}>Ver mais</ButtonLogout>
         </CardPosts>
     )
 }

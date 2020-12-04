@@ -1,13 +1,17 @@
+import Header from './components/header';
 import Router from './router/router'
+import { Background } from './styles/styles';
 
 function App() {
   return (
 
-    <div>
-     
+    <Background>
+
+      
+     <Header />
       <Router />
       
-    </div>
+    </Background>
   )
 }
 

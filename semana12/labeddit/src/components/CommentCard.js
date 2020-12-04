@@ -1,5 +1,6 @@
 import React from 'react'
 import {voteComment} from '../constants/requisitions'
+import { ButtonLogout, CardPosts, InfoP } from '../styles/styles'
 
 const CommentCard = (props) => {
 
@@ -11,13 +12,13 @@ const CommentCard = (props) => {
     }
 
     return (
-        <div>
-            <p>Votos: {props.votesCount}</p>
-            <p>{props.username}</p>
-            <p>{props.text}</p>
-            <button onClick={() => handleVote(1)}>Like</button>
-            <button onClick={() => handleVote(-1)}>Dislike</button>
-        </div>
+        <CardPosts>
+            <InfoP>Votos: {props.votesCount}</InfoP>
+            <InfoP>{props.username}</InfoP>
+            <InfoP>{props.text}</InfoP>
+            <ButtonLogout onClick={() => handleVote(1)}>Like</ButtonLogout>
+            <ButtonLogout onClick={() => handleVote(-1)}>Dislike</ButtonLogout>
+        </CardPosts>
     )
 
 }

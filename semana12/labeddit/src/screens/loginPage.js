@@ -5,6 +5,8 @@ import { useForm } from '../hooks/useForm'
 import { login } from '../constants/requisitions'
 import { goToRegister } from '../router/coordinator'
 import {useUnprotectedPage} from '../hooks/useUnprotectedPage'
+import {InfoH1, InfoH3, InfoP, Login} from '../styles/styles'
+import {Register} from '../styles/styles'
 
 const LoginPage = () => {
 
@@ -27,19 +29,21 @@ const LoginPage = () => {
     }
 
     return (
-        <div>
+        <Login>
 
-            <h1>Bem vinde ao LabEddit</h1>
+            <InfoH1>Bem vinde ao LabEddit</InfoH1>
 
-            <h3>Faça seu login!</h3>
+            <InfoH3>Faça seu login!</InfoH3>
 
             <form onSubmit={handleSubmission}>
                 <input
+                    placeholder="Digite seu email"
                     type="email"
                     name="email"
                     value={form.email}
                     onChange={handleInput} />
                 <input
+                    placeholder="Digite sua senha"
                     type="password"
                     name="password"
                     value={form.password}
@@ -51,10 +55,10 @@ const LoginPage = () => {
 
             </form>
 
-            <p>Ainda não é cadastrado no LabEddit?</p>
-            <span onClick={() => goToRegister(history)}>Cadastre-se!</span>
+            <InfoP>Ainda não é cadastrado no LabEddit?</InfoP>
+            <Register onClick={() => goToRegister(history)}>Cadastre-se!</Register>
 
-        </div>
+        </Login>
     )
 
 }

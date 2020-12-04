@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { baseUrl } from './urls'
 import {goToFeed} from '../router/coordinator'
+import {goToLogin} from '../router/coordinator'
 
 export const login = (body, history) =>{
 
@@ -106,3 +107,9 @@ export const voteComment = (body, postId, commentId) => {
         console.log(err)
     })
 }
+
+export const logout = (history) =>{
+    localStorage.removeItem("token")
+    goToLogin(history)
+  }
+  
