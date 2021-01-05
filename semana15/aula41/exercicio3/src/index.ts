@@ -1,39 +1,39 @@
-// a) e b)
+// a)
 
-type estatisticas = {
-    maior: number,
-    menor: number,
-    media: number
+type post = {
+    autor: string
+    texto: string
 }
 
-function obterEstatisticas(numeros: number[]): estatisticas {
+const posts: post[] = [
+    {
+      autor: "Alvo Dumbledore",
+      texto: "Não vale a pena viver sonhando e se esquecer de viver"
+    },
+    {
+      autor: "Severo Snape",
+      texto: "Menos 10 pontos para Grifinória!"
+    },
+    {
+      autor: "Hermione Granger",
+      texto: "É levi-ô-sa, não levio-sá!"
+    },
+    {
+      autor: "Dobby",
+      texto: "Dobby é um elfo livre!"
+    },
+    {
+      autor: "Lord Voldemort",
+      texto: "Avada Kedavra!"
+    }
+  ]
 
-    const numerosOrdenados: number[] = numeros.sort(
-        (a, b) => a - b
+//   b)
+
+function buscarPostsPorAutor(posts: post[], autorInformado:string) {
+    return posts.filter(
+      (post) => {
+        return post.autor === autorInformado
+      }
     )
-
-    let soma: number = 0
-
-    for (let num of numeros) {
-        soma += num
-    }
-
-    const estatisticas = {
-        maior: numerosOrdenados[numeros.length - 1],
-        menor: numerosOrdenados[0],
-        media: soma / numeros.length
-    }
-
-    return estatisticas
-}
-
-// c)
-type dataSample = {
-    numeros: number[],
-    obterEstatisticas: (numeros:number[]) => estatisticas
-}
-
-const teste: dataSample = {
-    numeros: [21, 18, 65, 44, 15, 18],
-    obterEstatisticas: obterEstatisticas
-}
+  }
