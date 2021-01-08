@@ -16,6 +16,13 @@ type user = {
     cpf: number;
     birthdate: number;
     balance: number;
+    transactions: transactions[]
+}
+
+type transactions = {
+    value: number;
+    date: number;
+    description: string;
 }
 
 let users: user[] = [
@@ -24,7 +31,12 @@ let users: user[] = [
         name: "Makoto",
         cpf: 17255299714,
         birthdate: 19980412,
-        balance: 325
+        balance: 325,
+        transactions: [{
+            value: 100,
+            date: 20201210,
+            description: "Pagamento de agiota."
+        }]
     }
 
 ]
@@ -39,7 +51,8 @@ app.post("/f4bank/create", (req: Request, res: Response) => {
             name: req.body.name,
             cpf: req.body.cpf,
             birthdate: req.body.birthdate,
-            balance: 0
+            balance: 0,
+            transactions: req.body.transactions
 
         }
 
@@ -71,7 +84,8 @@ app.get("/f4bank/accounts", (req: Request, res: Response) =>{
             name: users.name,
             cpf: users.cpf,
             birthdate: users.birthdate,
-            balance: users.balance
+            balance: users.balance,
+            transactions: users.transactions
             
         }))
 
