@@ -53,7 +53,7 @@ let users: user[] = [
         transactions: [{
             value: 100,
             date: "10-12-2020",
-            description: "Pagamento de agiota."
+            description: "Depósito em dinheiro."
         }]
     }
 
@@ -148,6 +148,37 @@ app.put("/f4bank/accounts/:id", (req: Request, res: Response) =>{
         res.status(200).send("Saldo alterado com sucesso!")
 
         
+
+    } catch(error){
+        res.status(errorCode).send(error.message)
+    }
+})
+
+app.get("/f4bank/accounts/user", (req: Request, res: Response) => {
+    let errorCode:number = 400;
+
+    try {
+
+        const cpf: string = req.query.cpf as string
+
+        if(!cpf){
+            errorCode = 422
+            throw new Error ("CPF não encontrado.")
+        }
+
+        const userCpf = users.find(((user: user) => user.cpf === cpf))
+
+        if(!userCpf){
+            errorCode = 404;
+            throw new Error("Cadastro não encontrado.")
+        }
+
+        const result = users.map(user => ({
+            balance: user.balance
+        }))
+
+        res.status(200).send(result)
+
 
     } catch(error){
         res.status(errorCode).send(error.message)
