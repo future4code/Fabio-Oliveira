@@ -1,0 +1,25 @@
+{
+  "name": "projeto-sistema-bancario",
+  "version": "1.0.0",
+  "description": "Sistema bancário para o F4Bank.",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.8",
+    "@types/express": "^4.17.8",
+    "@types/node": "^14.11.10",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "ts-node-dev": "^1.1.1",
+    "typescript": "^4.1.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
