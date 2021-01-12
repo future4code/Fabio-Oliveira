@@ -180,7 +180,7 @@ SELECT id, title, rating FROM Movie WHERE id = "004";
 b) Query:
 
 ```
-SELECT * FROM Movie WHERE name = "Tropa de Elite";
+SELECT * FROM Movie WHERE title = "Tropa de Elite";
 ```
 
 c) Query:
