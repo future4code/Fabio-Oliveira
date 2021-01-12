@@ -13,7 +13,7 @@ Exercício 2
 
 a) Query:
 
-```
+```sql
 INSERT INTO Actor (id, name, salary, birth_date, gender)
 VALUES (
     "002", 
@@ -34,7 +34,7 @@ e) Error Code: 1292. Incorrect date value: '1950' for column 'birth_date' at row
 
 f) Queries:
 
-```
+```sql
 INSERT INTO Actor (id, name, salary, birth_date, gender)
 VALUES (
  "006", 
@@ -45,7 +45,7 @@ VALUES (
 );
 ```
 
-```
+```sql
 INSERT INTO Actor (id, name, salary, birth_date, gender)
 VALUES (
  "007", 
@@ -62,14 +62,14 @@ Exercício 3
 
 a) Query:
 
-```
+```sql
 SELECT * FROM Actor 
 WHERE gender = "female";
 ```
 
 b) Query:
 
-```
+```sql
 SELECT salary FROM Actor 
 WHERE name = "Tony Ramos";
 ```
@@ -78,7 +78,7 @@ c) Ele retorna vazio, pois não tem nenhum gênero "invalid".
 
 d) Query:
 
-```
+```sql
 SELECT id, name, salary FROM Actor 
 WHERE salary <= 500000;
 ```
@@ -91,21 +91,21 @@ a) Essa query pega todas as informações da tabela ator cujos nomes comecem com
 
 b) Query:
 
-```
+```sql
 SELECT * FROM Actor
 WHERE name NOT LIKE "A%" AND salary > 350000;
 ```
 
 c) Query: 
 
-```
+```sql
 SELECT * FROM Actor
 WHERE name LIKE "%G%" OR name LIKE "%g%";
 ```
 
 d) Query:
 
-```
+```sql
 SELECT * FROM Actor
 WHERE LOWER(name) LIKE LOWER("%A%") 
 OR LOWER(name) LIKE LOWER("%G%")
@@ -119,7 +119,7 @@ a) Text não precisa requer um limitador, pois já é esperado dele um grande co
 
 b) Query: 
 
-```
+```sql
 INSERT INTO Movie (id, title, synopsis, release_date, rating)
 VALUES (
     "001",
@@ -132,7 +132,7 @@ VALUES (
 
 c) Query:
 
-```
+```sql
 INSERT INTO Movie (id, title, synopsis, release_date, rating)
 VALUES (
     "002",
@@ -145,7 +145,7 @@ VALUES (
 
 d) Query:
 
-```
+```sql
 INSERT INTO Movie (id, title, synopsis, release_date, rating)
 VALUES (
     "003",
@@ -158,7 +158,7 @@ VALUES (
 
 e) Query:
 
-```
+```sql
 Insert INTO Movie (id, title, synopsis, release_Date, rating)
 VALUES (
 004,
@@ -173,19 +173,19 @@ Exercício 6
 
 a) Query: 
 
-```
+```sql
 SELECT id, title, rating FROM Movie WHERE id = "004";
 ```
 
 b) Query:
 
-```
+```sql
 SELECT * FROM Movie WHERE title = "Tropa de Elite";
 ```
 
 c) Query:
 
-```
+```sql
 SELECT id, title, synopsis FROM Movie WHERE rating >= 7;
 ```
 
@@ -193,14 +193,14 @@ Exercício 7
 
 a) Query:
 
-```
+```sql
 SELECT * FROM Movie
 WHERE title LIKE "%vida%";
 ```
 
 b) Query:
 
-```
+```sql
 SELECT * FROM Movie
 WHERE title LIKE "%Tropa%" OR
       synopsis LIKE "%Tropa%";
@@ -208,14 +208,14 @@ WHERE title LIKE "%Tropa%" OR
 
 c) Query:
 
-```
+```sql
 SELECT * FROM MOVIE
 WHERE release_date < "2021-01-12";
 ```
 
 d) Query:
 
-```
+```sql
 SELECT * FROM MOVIE
 WHERE release_date < "2021-01-12" AND 
       (title LIKE "%Tropa%" OR
