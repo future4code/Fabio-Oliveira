@@ -73,13 +73,13 @@ SELECT MAX(salary) from Actor;
 b) Query:
 
 ```sql
-SELECT MIN(salary) from Actor;
+SELECT MIN(salary) from Actor WHERE gender = "female" ;
 ```
 
 c) Query:
 
 ```sql
-SELECT COUNT(*) FROM Actor WHERE gender = "female"
+SELECT COUNT(*) FROM Actor WHERE gender = "female";
 ```
 
 d) Query:
