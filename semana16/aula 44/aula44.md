@@ -13,6 +13,7 @@ Exercício 2
 
 a) Query:
 
+```
 INSERT INTO Actor (id, name, salary, birth_date, gender)
 VALUES (
     "002", 
@@ -21,6 +22,7 @@ VALUES (
     "1963-10-23", 
     "female"
 );
+```
 
 b) Error Code: 1062. Duplicate entry '002' for key 'PRIMARY'. O erro acusa uma entrada dupla da chave primária. Ou seja, ele não permite que duas chaves primárias iguais sejam inseridas no banco de dados.
 
@@ -32,6 +34,7 @@ e) Error Code: 1292. Incorrect date value: '1950' for column 'birth_date' at row
 
 f) Queries:
 
+```
 INSERT INTO Actor (id, name, salary, birth_date, gender)
 VALUES (
  "006", 
@@ -40,7 +43,9 @@ VALUES (
   "1985-02-15", 
   "male"
 );
+```
 
+```
 INSERT INTO Actor (id, name, salary, birth_date, gender)
 VALUES (
  "007", 
@@ -51,24 +56,32 @@ VALUES (
 
 );
 
+```
+
 Exercício 3
 
 a) Query:
 
+```
 SELECT * FROM Actor 
 WHERE gender = "female";
+```
 
 b) Query:
 
+```
 SELECT salary FROM Actor 
 WHERE name = "Tony Ramos";
+```
 
 c) Ele retorna vazio, pois não tem nenhum gênero "invalid".
 
 d) Query:
 
+```
 SELECT id, name, salary FROM Actor 
 WHERE salary <= 500000;
+```
 
 e) Error Code: 1054. Unknown column 'nome' in 'field list'. O erro informe que desconhece a coluna 'nome'. Isso acontece pois o nome da coluna na verdade é 'name' e não 'nome'.
 
@@ -78,20 +91,26 @@ a) Essa query pega todas as informações da tabela ator cujos nomes comecem com
 
 b) Query:
 
+```
 SELECT * FROM Actor
 WHERE name NOT LIKE "A%" AND salary > 350000;
+```
 
 c) Query: 
 
+```
 SELECT * FROM Actor
 WHERE name LIKE "%G%" OR name LIKE "%g%";
+```
 
 d) Query:
 
+```
 SELECT * FROM Actor
 WHERE LOWER(name) LIKE LOWER("%A%") 
 OR LOWER(name) LIKE LOWER("%G%")
 AND salary BETWEEN 35000000 AND 90000000;
+```
 
 
 Exercício 5
@@ -100,6 +119,7 @@ a) Text não precisa requer um limitador, pois já é esperado dele um grande co
 
 b) Query: 
 
+```
 INSERT INTO Movie (id, title, synopsis, release_date, rating)
 VALUES (
     "001",
@@ -108,9 +128,11 @@ VALUES (
     "2006-01-06",
     7
 );
+```
 
 c) Query:
 
+```
 INSERT INTO Movie (id, title, synopsis, release_date, rating)
 VALUES (
     "002",
@@ -119,9 +141,11 @@ VALUES (
     "2012-12-27",
     10
 );
+```
 
 d) Query:
 
+```
 INSERT INTO Movie (id, title, synopsis, release_date, rating)
 VALUES (
     "003",
@@ -130,8 +154,12 @@ VALUES (
     "2017-11-02",
     8
 );
+```
 
-e) Insert INTO Movie (id, title, synopsis, release_Date, rating)
+e) Query:
+
+```
+Insert INTO Movie (id, title, synopsis, release_Date, rating)
 VALUES (
 004,
 "Tropa de Elite",
@@ -139,45 +167,60 @@ VALUES (
 "2007-10-05",
 8
 );
+```
 
 Exercício 6
 
 a) Query: 
 
+```
 SELECT id, title, rating FROM Movie WHERE id = "004";
+```
 
 b) Query:
 
+```
 SELECT * FROM Movie WHERE name = "Tropa de Elite";
+```
 
 c) Query:
 
+```
 SELECT id, title, synopsis FROM Movie WHERE rating >= 7;
+```
 
 Exercício 7
 
 a) Query:
 
+```
 SELECT * FROM Movie
 WHERE title LIKE "%vida%";
+```
 
 b) Query:
 
+```
 SELECT * FROM Movie
 WHERE title LIKE "%Tropa%" OR
       synopsis LIKE "%Tropa%";
+```
 
 c) Query:
 
+```
 SELECT * FROM MOVIE
 WHERE release_date < "2021-01-12";
+```
 
 d) Query:
 
+```
 SELECT * FROM MOVIE
 WHERE release_date < "2021-01-12" AND 
       (title LIKE "%Tropa%" OR
       synopsis LIKE "%Tropa%") AND rating > 7
+```
 
 
 
