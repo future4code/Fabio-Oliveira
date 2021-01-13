@@ -135,3 +135,120 @@ app.get("/actor/:id", async (req: Request, res: Response) => {
 
 ```
 
+b)
+```typescript
+app.get("/actor", async (req: Request, res: Response) => {
+  
+  try {
+    const gender = req.query.gender as string;
+    const actor = await searchActorByGender(gender);
+
+    if(!actor) {
+      res.statusCode = 400;
+      throw new Error ("Ator(a) não encontrado(a).")
+    }
+
+    res.status(200).send({actor: actor});
+
+  } catch(error){
+      console.log(error)
+      res.send(error.message)
+  }
+
+
+})
+```
+
+Exercício 4
+
+a)
+```typescript
+app.post('/actor', async (req:Request, res:Response) => {
+  try {
+    const update = await updateActor(req.body.id, req.body.salary);
+    res.status(200).send("Salário atualizado!")
+  } catch (error) {
+    res.status(400).send(error.message)
+  }
+})
+```
+
+b)
+```typescript
+app.delete("/actor/:id", async (req: Request, res: Response) =>{
+  try {
+
+    await deleteActor(req.params.id);
+
+    res.status(200).send("Ator deletado com sucesso!")
+
+  } catch(error) {
+    res.status(400).send(error.message)
+  }
+})
+```
+
+Exercício 5
+```typescript
+const createMovie = async (
+  id: string,
+  title: string,
+  synopsis: string,
+  release_Date: Date,
+  playing_limit_date: Date
+) => {
+  await connection
+
+  .insert({
+    id: id,
+    title: title,
+    synopsis: synopsis,
+    release_Date: release_Date,
+    playing_limit_date: playing_limit_date
+  })
+  .into("Movie");
+};
+
+app.post("/movie", async (req: Request, res: Response) =>{
+
+  try {
+  await createMovie(
+    req.body.id,
+    req.body.title,
+    req.body.synopsis,
+    req.body.release_Date,
+    req.body.playing_limit_date
+  )
+  res.status(200).send("Filme adicionado com sucesso!")
+  } catch(error){
+    res.status(400).send(error.message)
+  }
+});
+```
+
+Exercício 6
+
+```typescript
+const searchMovie = async (query: string): Promise<any> => {
+  const result = await connection.raw(`
+    SELECT * FROM Movie 
+    WHERE title LIKE "%${query}%" OR synopsis LIKE "%${query}%"
+    ORDER BY release_Date ASC
+  `)
+
+  return result[0]
+};
+
+app.get("/movie/search", async (req: Request, res: Response) => {
+  try {
+    const movies = await searchMovie(req.query.query as string);
+
+    res.status(200).send({
+      movies: movies,
+    });
+  } catch (error)  {
+    res.status(400).send(error.message);
+  }
+});
+```
+

@@ -119,3 +119,95 @@ app.get("/actor/:id", async (req: Request, res: Response) => {
   }
 });
 
+const deleteActor = async (id: string): Promise<void> => {
+  await connection("Actor")
+    .delete()
+    .where("id", id);
+}; 
+
+app.delete("/actor/:id", async (req: Request, res: Response) =>{
+  try {
+
+    await deleteActor(req.params.id);
+
+    res.status(200).send("Ator deletado com sucesso!")
+
+  } catch(error) {
+    res.status(400).send(error.message)
+  }
+})
+
+const createMovie = async (
+  id: string,
+  title: string,
+  synopsis: string,
+  release_Date: Date,
+  playing_limit_date: Date
+) => {
+  await connection
+
+  .insert({
+    id: id,
+    title: title,
+    synopsis: synopsis,
+    release_Date: release_Date,
+    playing_limit_date: playing_limit_date
+  })
+  .into("Movie");
+};
+
+app.post("/movie", async (req: Request, res: Response) =>{
+
+  try {
+  await createMovie(
+    req.body.id,
+    req.body.title,
+    req.body.synopsis,
+    req.body.release_Date,
+    req.body.playing_limit_date
+  )
+  res.status(200).send("Filme adicionado com sucesso!")
+  } catch(error){
+    res.status(400).send(error.message)
+  }
+});
+
+const allMovies = async (): Promise<any> => {
+  const result = await connection.raw(`
+  SELECT * FROM Movie LIMIT 15
+  `)
+
+  return result[0]
+};
+
+app.get("/movie/all", async (req: Request, res: Response) => {
+  try {
+    const movies = await allMovies();
+
+    res.status(200).send({movies: movies})
+  } catch(error) {
+
+  };
+})
+
+const searchMovie = async (query: string): Promise<any> => {
+  const result = await connection.raw(`
+    SELECT * FROM Movie 
+    WHERE title LIKE "%${query}%" OR synopsis LIKE "%${query}%"
+    ORDER BY release_Date ASC
+  `)
+
+  return result[0]
+};
+
+app.get("/movie/search", async (req: Request, res: Response) => {
+  try {
+    const movies = await searchMovie(req.query.query as string);
+
+    res.status(200).send({
+      movies: movies,
+    });
+  } catch (error)  {
+    res.status(400).send(error.message);
+  }
+});
