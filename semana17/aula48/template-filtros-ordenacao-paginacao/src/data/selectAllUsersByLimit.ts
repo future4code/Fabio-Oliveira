@@ -5,7 +5,7 @@ export default async function selectAllUsersByLimit(userLimit: string):Promise<a
     const result = await connection.raw(`
        SELECT *
        FROM aula48_exercicio
-       LIMIT ${userLimit}};
+       LIMIT ${userLimit};
     `)
  
     return result[0]

@@ -1,11 +1,10 @@
-import selectAllUsersByName from '../data/selectAllUsersByName'
 import { Request, Response } from "express";
 import selectAllUsersByLimit from '../data/selectAllUsersByLimit';
 
 export const getUsersByLimit = async (req: Request, res: Response): Promise<void> => {
     try {
 
-        const userLimit = req.params.name as string
+        const userLimit = req.params.limit as string
         const users = await selectAllUsersByLimit(userLimit)
 
 
