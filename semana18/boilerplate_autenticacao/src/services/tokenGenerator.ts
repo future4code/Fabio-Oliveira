@@ -18,10 +18,6 @@ export const generateToken=(input: AuthenticationData): string => {
     return token;
   }
 
-type AuthenticationData = {
-  id: string;
-}
-
 export const getData = (token: string): AuthenticationData => {
   const payload = jwt.verify(token, process.env.JWT_KEY as string) as any;
   const result = {
@@ -30,5 +26,8 @@ export const getData = (token: string): AuthenticationData => {
   return result;
 };
 
+export type AuthenticationData = {
+  id: string;
+}
 
 

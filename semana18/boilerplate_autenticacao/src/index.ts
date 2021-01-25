@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { AddressInfo } from "net";
 import signup from "./endpoints/signup";
 import { login } from "./endpoints/login";
+import { getUser } from "./endpoints/getUserById";
 
 export const connection = knex({
   client: 'mysql',
@@ -24,6 +25,7 @@ app.use(express.json());
 
 app.post('/signup', signup)
 app.post('/login', login)
+app.get('/user/profile', getUser)
 
 
 const server = app.listen(process.env.PORT || 3000, () => {

@@ -30,7 +30,7 @@ export async function login(req: Request, res: Response) {
             throw new Error ('Incorrect Password')
         }
 
-        const token = generateToken(user.id);
+        const token = generateToken({id: user.id});
 
         res.status(200).send({token})
 
