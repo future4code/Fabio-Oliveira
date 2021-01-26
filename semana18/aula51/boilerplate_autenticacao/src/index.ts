@@ -5,6 +5,8 @@ import { AddressInfo } from "net";
 import signup from "./endpoints/signup";
 import { login } from "./endpoints/login";
 import { getUser } from "./endpoints/getUserById";
+import deleteUserById from "./endpoints/deleteUser";
+import getUserAll from "./endpoints/getUser";
 
 export const connection = knex({
   client: 'mysql',
@@ -26,6 +28,8 @@ app.use(express.json());
 app.post('/signup', signup)
 app.post('/login', login)
 app.get('/user/profile', getUser)
+app.delete('/user/:id', deleteUserById)
+app.get('user', getUserAll)
 
 
 const server = app.listen(process.env.PORT || 3000, () => {

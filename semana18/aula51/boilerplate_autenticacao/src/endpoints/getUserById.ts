@@ -11,6 +11,10 @@ export async function getUser(req: Request, res: Response): Promise<void> {
 
         const user = await getUserById(authenticationData.id)
 
+        if(authenticationData.role !== "normal"){
+            throw new Error ('Only normal users can edit their profiles')
+        }
+
         res.status(200).send({
             id: user.id,
             email: user.email

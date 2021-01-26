@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { getUserByEmail } from "../data/getUserByEmail";
+import { compare } from "../services/generateHash";
 import { generateToken } from '../services/tokenGenerator';
 import {LoginInput} from '../types/loginInput'
 
@@ -22,15 +23,20 @@ export async function login(req: Request, res: Response) {
 
         const user = await getUserByEmail(input.email)
 
+        const compareResult = await compare(
+            input.password,
+            user.password
+          );
+
+          if(!compareResult){
+              throw new Error ('Invalid password')
+          }
+
         if(!user){
             throw new Error ('User not found')
         }
-
-        if(user.password !== input.password){
-            throw new Error ('Incorrect Password')
-        }
-
-        const token = generateToken({id: user.id});
+        
+        const token = generateToken({id: user.id, role: user.role});
 
         res.status(200).send({token})
 

@@ -18,16 +18,20 @@ export default async function signup(req: Request, res: Response) {
 
         const userData = {
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            role: req.body.role
         }
 
+        if(req.body.role === 'undefined'){
+            req.body.role = 'normal'
+        }
         const id = generatorId();
 
-        const token = generateToken({id})
+        const token = generateToken({id, role: userData.role})
 
         const hashPassword = await hash(userData.password)
 
-        await createUser(id, userData.email, hashPassword)
+        await createUser(id, userData.email, hashPassword, userData.role)
 
         res.status(200).send(token)
 
