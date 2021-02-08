@@ -1,30 +1,30 @@
-enum LOCATION {
+export enum LOCATION {
     EUA = "EUA",
     BRAZIL = "BRAZIL",
   }
   
-  enum NACIONALITY {
+  export enum NACIONALITY {
     BRAZILIAN = "BRAZILIAN",
     AMERICAN = "AMERICAN",
   }
   
-interface Client {
+export interface Client {
     name: string;
     age: number;
     nacionality: NACIONALITY;
   }
   
-interface Casino {
+export interface Casino {
     name: string;
     location: LOCATION;
   }
 
-interface Result {
+export interface Result {
     brazilians: ResultItem;
     americans: ResultItem;
   }
   
-interface ResultItem {
+export interface ResultItem {
     allowed: string[];
     unallowed: string[];
   }
