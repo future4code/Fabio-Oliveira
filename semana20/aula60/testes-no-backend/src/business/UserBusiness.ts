@@ -1,10 +1,9 @@
 import { CustomError } from "../errors/CustomError";
-import { User, stringToUserRole } from "../model/User";
+import { User, stringToUserRole, UserRole } from "../model/User";
 import { UserDatabase } from "../data/UserDatabase";
 import { HashGenerator } from "../services/hashGenerator";
 import { IdGenerator } from "../services/idGenerator";
 import { TokenGenerator } from "../services/tokenGenerator";
-import { NotFoundError } from "../errors/NotFoundError";
 
 export class UserBusiness {
 
@@ -93,13 +92,10 @@ export class UserBusiness {
 
    public async getUserById(id:string) {
 
-      let message = ''
-
       const user = await this.userDatabase.getUserById(id)
 
       if(!user){
-         // throw new NotFoundError(message)
-         throw new CustomError(404, 'Invalid-id')
+         throw new CustomError(404, 'User not found')
       }
 
       const userInfo = {
@@ -111,6 +107,40 @@ export class UserBusiness {
 
       return (userInfo)
    }
-}
+
+   public async getAllUsers(role: UserRole) {
+      if (stringToUserRole(role) !== UserRole.ADMIN) {
+         throw new CustomError(
+           401, 
+           "You must be an admin to access this endpoint"
+         );
+       }
+       const users = await this.userDatabase.getAllUsers();
+   
+       return users.map((user) => ({
+         id: user.getId(),
+         name: user.getName(),
+         email: user.getEmail(),
+         role: user.getRole(),
+       }));
+     }
+
+     public async getProfile(id: string) {
+        const user = await this.userDatabase.getUserById(id)
+
+        if(!user){
+           throw new CustomError(404, 'User not found')
+        }
+
+        const userProfile = {
+           id: user.getId(),
+           name: user.getName(),
+           email: user.getEmail(),
+           role: user.getRole()
+        }
+
+        return (userProfile)
+     }
+   }
 
 export default new UserBusiness(new IdGenerator(), new HashGenerator(), new UserDatabase(), new TokenGenerator())
